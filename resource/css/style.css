@@ -1,0 +1,497 @@
+*{
+	margin:0;
+	padding: 0;
+
+}
+
+html{
+	background-color: #FFF;
+	color:#555;
+	font-family: "lato","verdana";
+	font-size: 20px;
+	text-rendering: optimizeLegibility;
+	scroll-behavior: smooth;
+}
+
+header{
+	min-height: 100vh;
+	background-image:linear-gradient(rgba(255,192,203,0.69),rgba(2,7,93,0.69));
+	background-position: center;
+	background-attachment: fixed;
+  	background-position: center;
+ 	background-repeat: no-repeat;
+  	background-size: cover;
+}
+
+#Ceu{
+	font-size: 30px;
+	color: #FF007F;
+	text-transform: uppercase;
+}
+
+#Tltd{
+	color:#0A1172;
+	font-size: 30px;
+}
+
+.Reservetxt{
+	color:#0A1172;
+}
+
+.Heretxt{
+	color:#FF007F;
+}
+
+
+.schoolname{
+	color:#FFF;
+	padding-left: 0;
+}
+
+.navcon{
+	background-color: transparent;
+}
+
+#mySidenav a {
+  position: fixed;
+  right: -140px;
+  transition: 0.5s;
+  padding: 15px;
+  min-width: 190px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 0 5px 5px 0;
+  text-align: left;
+  z-index: 99;
+  color:white;
+}
+
+#mySidenav a:hover {
+  right: 0;
+}
+
+#Home {
+  top: 30px;
+  background-color: rgb(2,7,93,0.69); 
+}
+
+#Gallery {
+  top: 100px;
+   background-color: rgb(2,7,93,0.69);  
+}
+
+#AboutUs {
+  top: 180px;
+   background-color: rgb(2,7,93,0.69);  	
+}
+
+#ContactUs {
+  top: 260px;
+   background-color: rgb(2,7,93,0.69);
+}
+
+
+
+.header-text{
+	font-family: "lato", "verdana";
+	background-color: transparent;
+	color: #FFF;
+}
+
+.headermain{
+	font-size: 3rem;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	word-spacing: 4px;
+	margin-bottom: 30px;
+
+}
+
+
+
+.btn:link,
+.btn:visited{
+	border: 1px solid white;
+	border-radius: 30px;
+	text-decoration: none;
+	margin-left: 20px;
+	
+}
+
+.btn-ghost:link,
+.btn-ghost:visited{
+	background-color: transparent;
+	transition: 0.5s;
+	color:white;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active{
+	background-color: rgb(2,7,93);
+	transition: 0.5s;
+	color:white;
+}
+
+.section2{
+	min-height: 80vh;
+	background-color:grey;
+}
+
+.Abouttltd{
+	background-color: transparent;
+	color: rgb(2,7,93);
+	text-align: left;
+	text-transform: uppercase;
+	padding-top: 20px;
+	padding-left: 50px;
+}
+
+.tablink {
+  background-color: ;
+  color:  rgb(2,7,93);
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 16px;
+  font-size: 16px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: rgb(255,221,51);
+  color:#331A00;
+}
+
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 70px 20px;
+  height: 400px;
+  text-align: justify;
+  font-size: 20px;
+  margin:0;
+}
+
+#Mission{
+	background-image:linear-gradient(rgba(20,20,20,0.69),rgba(20,20,20,0.69)),url(../img/9.jpg);
+	background-position: center;
+	background-size: cover;
+	}
+#Vision{
+	background-image:linear-gradient(rgba(20,20,20,0.69),rgba(20,20,20,0.69)),url(../img/10.jpg);
+	background-position: center;
+	background-size: cover;
+}
+#History{
+	background-image:linear-gradient(rgba(20,20,20,0.69),rgba(20,20,20,0.69)),url(../img/11.jpg);
+	background-position: center;
+	background-size: cover;
+}
+#Promise{
+	background-image:linear-gradient(rgba(20,20,20,0.69),rgba(20,20,20,0.69)),url(../img/12.jpg);
+	background-position: center;
+	background-size: cover;
+}
+
+.section1{
+	min-height: 100vh;
+	background-image:linear-gradient(rgba(20,20,20,0.69),rgba(20,20,20,0.69)),url(../img/4.jpg);
+	background-position: center;
+	background-attachment: fixed;
+  	background-position: center;
+ 	background-repeat: no-repeat;
+  	background-size: cover;
+}
+
+.gallerys{
+	background-color:rgb(255,221,51);
+	color:#1c1c1c;
+	text-transform: uppercase;
+	padding-top: 20px;
+	padding-left: 50px;
+}
+
+.containerq{
+	margin-top: 10px;
+	text-align: center;
+}
+
+.order{
+	background-color:transparent;
+	border:1px solid rgb(255,221,51);
+	text-align: center;
+	border-radius: 20px;
+	min-width:300px;
+	color:rgb(255,221,51);
+	margin-top: 30px;
+	padding: 10px;
+}
+
+.order:hover{
+	background-color: #331A00;
+	color:rgb(255,221,51);
+	text-decoration: none;
+}
+
+.img{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.containers{
+	width:auto;
+	margin:40px;
+}
+
+.carousel-item{
+	margin-top:50px;
+}
+
+
+.carousel-caption{
+	color:rgb(255,221,51);
+	font-size: 25px;
+	background-image:linear-gradient(rgba(20,20,20,0.69),rgba(20,20,20,0.69));
+}
+
+.section4{
+	background-image:linear-gradient(rgba(20,20,20,0.69),rgba(20,20,20,0.69)),url(../img/4.jpg);
+	background-position: center;
+	background-attachment: fixed;
+  	background-position: center;
+ 	background-repeat: no-repeat;
+  	background-size: cover;
+	min-height: 50vh;
+	padding-top: 30px;
+}
+
+.banner{
+	color:#1c1c1c;
+	background-color:rgb(255,221,51);
+	margin-top:0;
+	margin-bottom: 0;
+	padding-left: 50px;
+
+}
+
+.table{
+	background-color: #1c1c1c;
+	color:rgb(255,221,51);
+    width: 100%;
+    margin-bottom: 0;
+  	margin-top: 0;
+
+}
+
+.section3{
+	background-image:url(../img/2.jpg);
+	background-position: center;
+	background-attachment: fixed;
+  	background-position: center;
+ 	background-repeat: no-repeat;
+  	background-size: cover;
+	min-height: 100vh;
+	padding-top:0;
+}
+
+
+.contact{
+	background-color:rgb(255,221,51);
+	color:#1c1c1c;
+	text-transform: uppercase;
+	padding-top: 20px;
+	padding-left: 50px;
+	margin-top: 0;
+	margin-bottom: 50px;
+
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #FFF;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 12px;
+  display: inline-block;
+  color:rgb(255,221,51);
+}
+
+input[type=submit] {
+  background-color:transparent;
+  color: rgb(255,221,51);
+  padding: 12px 20px;
+  border: 1px solid rgb(255,221,51);
+  border-radius: 30px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(71,51,0);
+  color:rgb(255,221,51);
+}
+
+.containered {
+  border-radius: 5px;
+  background-color: rgba(20,20,20,.60);
+  padding: 20px;
+  margin: 20px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+  padding-left: 0;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+  padding-right: 30px;
+  margin-bottom: 10px;
+}
+
+.review-btn:link,
+.review-btn:visited{
+	border: 1px solid rgb(255,221,51);
+	text-decoration: none;
+	margin-left: 20px;
+	color: rgb(255,221,51);
+}
+
+.review-btn:hover,
+.review-btn:active{
+	background-color: rgb(71,51,0);
+	transition: 0.5s;
+	color:rgb(255,221,51);
+}
+
+
+
+
+.rows:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.rows{
+	padding-right: 12px;
+	padding-left: 12px;
+	width:100%;
+}
+
+
+footer{
+	min-height: 10vh;
+	background-color: #1c1c1c;
+}
+
+.ft2{
+	font-size: 100%;
+	color: rgb(255,221,51);
+	padding: 20px;
+	margin-bottom: 0;
+	text-align: center;
+}
+.ft2 i{
+	font-size: 100%;
+	color: rgb(255,221,51);
+	padding: 20px;
+	margin-right: 20px;
+}
+
+
+@media(max-width: 820px){
+	.schoolname{
+	visibility:visible;
+	}
+
+
+	.btn{
+		font-size: 1rem;
+	}
+
+	.header-text{
+		padding-top: 0;
+		margin-bottom: 0;
+	}
+	.headermain{
+		font-size: 2.5rem;
+	}
+
+	.tablink {
+		font-size: 0.8rem;
+	}
+	.tabcontent{
+		font-size: .8rem;
+		margin-bottom: 20px;
+	}
+	
+	.img{
+		width:300px;
+    height: 400px;
+    object-fit: cover;
+	}
+
+	.carousel-caption{
+		font-size: 16px;
+	}
+
+	.containers{
+	width:auto;
+	align-content: center;
+	}
+
+	.col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+    margin-left: 30px;
+	}
+
+	.section3{
+		padding-bottom: 20px;
+	}
+
+	.review-btn:link,
+	.review-btn:visited{
+		border: 1px solid rgb(255,221,51);
+		text-decoration: none;
+		margin-left: 0;
+		margin-bottom: 20px;
+		color: rgb(255,221,51);
+		width: 100%;
+	}
+
+	.review-btn:hover,
+	.review-btn:active{
+		background-color: rgb(71,51,0);
+		transition: 0.5s;
+		color:rgb(255,221,51);
+	}
+
+	.ft2{
+	font-size: 70%;
+	color: rgb(255,221,51);
+	padding: 20px;
+	margin-bottom: 0;
+	text-align: center;
+	}
+	.ft2 i{
+	font-size: 100%;
+	color: rgb(255,221,51);
+	padding: 20px;
+	margin-right: 10px;
+	}
+
+}
