@@ -34,10 +34,6 @@ html{
 	color: white;
 }
 
-.Ad_hometxt{
-	color: rgb(2, 7, 93);
-}
-
 .hakdog{
 	background-color: transparent;
 }
@@ -75,6 +71,25 @@ html{
   background-color: rgb(2,7,93,0.69); 
 }
 
+.containerC{
+	 width: 50%;
+  border-radius: 1px;
+  background-color: rgba(20,20,20,.60);
+  padding: 20px;
+  margin: 250px;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-align: center;
+}
+
+.camp_picture{
+	width: 200px;
+	height:200px;
+	padding: 20px;
+}
+
+
+
 
 input[type=text], select, textarea {
   width: 100%;
@@ -106,58 +121,21 @@ input[type=submit]:hover {
 	color:white;
 }
 
-.error{
-	background-color: red;
-	color: white;
-	margin-left: 100px;
-	margin-Right: 100px;
-}
-
-.Pending{
-	background-image:linear-gradient(rgba(255,192,203,0.69),rgba(2,7,93,0.69));
-	color: white;
-}
-
-.contact{
-	background-color:rgb(2,7,93);
-	color:white;
-	text-transform: uppercase;
-	padding-top: 20px;
-	padding-left: 50px;
-	margin-top: 0;
-	margin-bottom: 50px;
-
-}
-
 .containered {
-  width: 70%;
+  width: 90%;
   height: 100%;
   border-radius: 1px;
   background-color: rgba(20,20,20,.60);
   padding: 10px;
+  margin: 50px;
   margin-bottom: 0;
-  margin-top: 100px;
-  margin-left: 200px;
+  margin-top: 0;
   text-align: center;
 }
-
-.containeredP{
-	width: 80%;
-  border-radius: 1px;
-  background-color: rgba(20,20,20,.60);
-  padding: 20px;
-  margin-bottom: 0;
-  margin-left: 140px;
-  margin-top: 50px;
-
-  text-align: center;
-}
-
 
 .label_Confirm{
 	color: white;
 }
-
 
 .table{
 	color: black;
@@ -174,21 +152,62 @@ input[type=submit]:hover {
 	background-color: rgb(2, 7,93);
 }
 
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-  margin-left: 80px;
-  padding-left: 0;
+#myBtn{
+	color: white;
+	text-decoration-line: underline;
+	cursor: pointer;
 }
 
-.col-75 {
-  float: left;
-  width: 50%;
-  margin-top: 6px;
-  padding-right: 30px;
-  margin-bottom: 10px;
+.confirmMessage{
+	color: white;
+	background-color: blue;
 }
+
+#acknowledge{
+	color: white;
+}
+
+#myModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  margin-left: 1000px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
 
 
 footer{
@@ -198,14 +217,14 @@ footer{
 
 .ft2{
 	font-size: 100%;
-	color: rgb(255,192,203);
-	padding: 0.5px;
+	color: rgb(255,221,51);
+	padding: 20px;
 	margin-bottom: 0;
 	text-align: center;
 }
 .ft2 i{
 	font-size: 100%;
-	color: rgb(255,192,203);
+	color: rgb(255,221,51);
 	padding: 20px;
 	margin-right: 20px;
 }

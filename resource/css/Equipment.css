@@ -13,6 +13,7 @@ html{
 	scroll-behavior: smooth;
 }
 
+
 .logo{
 	height: 40px;
 	margin-bottom: 10px;
@@ -48,47 +49,49 @@ html{
   	background-size: cover;
 }
 
+
+#mySidenav a {
+  position: fixed;
+  right: -140px;
+  transition: 0.5s;
+  padding: 15px;
+  min-width: 190px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 0 5px 5px 0;
+  text-align: left;
+  z-index: 99;
+  color:white;
+}
+
+#mySidenav a:hover {
+  right: 0;
+}
+
+#Home {
+  top: 30px;
+  background-color: rgb(2,7,93,0.69); 
+}
+
 .containerC{
 	 width: 50%;
   border-radius: 1px;
   background-color: rgba(20,20,20,.60);
-  padding: 20px;
+  padding: 50px;
   margin: 250px;
   margin-bottom: 0;
-  margin-top: 0;
+  margin-top: 100px;
+  margin-left: 380px;
   text-align: center;
 }
 
 .camp_picture{
-	width: 200px;
-	height:200px;
+	width: 180px;
+	height:180px;
 	padding: 20px;
 }
 
 
-.btn:link,
-.btn:visited{
-	border: 1px solid white;
-	border-radius: 30px;
-	text-decoration: none;
-	margin-left: 50px;
-	margin-top: 100px;
-	
-}
-
-.reviews-btn:link,
-.reviews-btn:visited{
-	background-color: transparent;
-	transition: 0.5s;
-	color:white;
-}
-
-.reviews-btn:hover,
-.reviews-btn:active{
-	background-color: rgb(2,7,93);
-	transition: 0.5s;
-	color:white;
-}
 
 input[type=text], select, textarea {
   width: 100%;
@@ -121,15 +124,17 @@ input[type=submit]:hover {
 }
 
 .containered {
-  width: 50%;
+  width: 90%;
   border-radius: 1px;
   background-color: rgba(20,20,20,.60);
-  padding: 20px;
-  margin: 250px;
+  padding: 30px;
+  margin: 20px;
   margin-bottom: 0;
   margin-top: 0;
-  text-align: center;
+  margin-left: 80px;
+  text-align: left;
 }
+
 
 .col-25 {
   float: left;
@@ -141,10 +146,59 @@ input[type=submit]:hover {
 
 .col-75 {
   float: left;
-  width: 50%;
+  width: 60%;
   margin-top: 6px;
-  padding-right: 30px;
+  padding-right: 50px;
   margin-bottom: 10px;
+}
+
+#myBtn{
+	color: white;
+	text-decoration-line: underline;
+	cursor: pointer;
+}
+
+#acknowledge{
+	color: white;
+}
+
+#myModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  margin-left: 1000px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 

@@ -25,32 +25,21 @@
       </nav>
     </div>
     </div>
-    <div class = "containerC">
-      <h5 class="ad_logTxt">Admin Login</h5>
-    <a href="Equipment_Reservation.php"><img src="resource/img/Manila.png" alt="Manila" class="camp_picture"></a>
-    <a href="Equipment_Reservation.php"><img src="resource/img/Makati.png" alt="Manila" class="camp_picture"></a>
-    <a href="Equipment_Reservation.php"><img  src="resource/img/Malolos.png" alt="Manila" class="camp_picture"></a>
+
+    <div id="mySidenav" class="sidenav">
+      <a href="index.php" id="Home"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="white" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>&nbsp;&nbsp; Home</a>
     </div>
-   <a class ="btn reviews-btn"  href="index.php">Back to Home</a>
+
+    <div class = "containerC">
+      <h5 class="ad_logTxt">Select Campus</h5>
+    <a href="Equipment_Reservation.php"><img src="resource/img/Manila.png" alt="Manila" class="camp_picture"></a>
+    <a href="Equipment_Reservation.php"><img src="resource/img/Makati.png" alt="Makati" class="camp_picture"></a>
+    <a href="Equipment_Reservation.php"><img  src="resource/img/Malolos.png" alt="Malolos" class="camp_picture"></a>
+    </div>
   </header>
           
 
-   <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md">
-          <p class="ft2">
-            CTTO for pictures, For educational Purposes Only<br/>&nbsp;&nbsp;&nbsp;
-            all rights reserve 2021<br/>&nbsp;&nbsp;&nbsp;
-            <i class="fab fa-facebook-square"></i>
-            <i class="fab fa-twitter-square"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-youtube"></i>
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
+  
   <script src="resource/js/script.js"></script>
   <script src="vendor/js/jquery.js"></script>
   <script src="vendor/js/popper.js"></script>

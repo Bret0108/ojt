@@ -1,5 +1,3 @@
-<?php include('PHP/Admin/Alogin.php')?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,7 +6,7 @@
      <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link href="vendor/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="resource/css/Login.css">
+    <link rel="stylesheet" type="text/css" href="resource/css/Equipment.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"/>
   <title>CEUTLTD</title>
@@ -31,51 +29,17 @@
     <div id="mySidenav" class="sidenav">
       <a href="index.php" id="Home"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="white" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>&nbsp;&nbsp; Home</a>
     </div>
-    
-    <div class="containered">
-      <h5 class="ad_logTxt">Admin Login</h5>
-      <form action="Login.php" method="POST" >
-          <?php include('PHP/errors.php'); ?>
-        <div class="row">
-          <div class="col-25">
-            <label for="fname">Username</label>
-          </div>
-          <div class="col-75">
-            <input class="form-control" type="text" id="fname" name="username" placeholder="Username" required></input>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-25">
-            <label for="subject">Password</label>
-          </div>
-          <div class="col-75">
-            <input class="form-control" type="text" id="subject" name="password" placeholder="Password" style="height:50px" required></input>
-          </div>
-        </div>
-        <div class="rows">
-          <input type="submit" value="Submit" name="login_user">
-        </div>
-      </form>
+
+    <div class = "containerC">
+      <h5 class="ad_logTxt">Select Campus</h5>
+    <a href="Facility_Reservation.php"><img src="resource/img/Manila.png" alt="Manila" class="camp_picture"></a>
+    <a href="Facility_Reservation.php"><img src="resource/img/Makati.png" alt="Makati" class="camp_picture"></a>
+    <a href="Facility_Reservation.php"><img  src="resource/img/Malolos.png" alt="Malolos" class="camp_picture"></a>
     </div>
   </header>
- 
+          
 
-   <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md">
-          <p class="ft2">
-            Sample for OJT Project purposes<br/>&nbsp;&nbsp;&nbsp;
-            all rights reserve 2022<br/>&nbsp;&nbsp;&nbsp;
-            <i class="fab fa-facebook-square"></i>
-            <i class="fab fa-twitter-square"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-youtube"></i>
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
+  
   <script src="resource/js/script.js"></script>
   <script src="vendor/js/jquery.js"></script>
   <script src="vendor/js/popper.js"></script>
