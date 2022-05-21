@@ -32,9 +32,9 @@
 
     <div class = "containerC">
       <h5 class="ad_logTxt">Select Campus</h5>
-    <a href="Equipment_Reservation.php"><img src="resource/img/Manila.png" alt="Manila" class="camp_picture"></a>
-    <a href="Equipment_Reservation.php"><img src="resource/img/Makati.png" alt="Makati" class="camp_picture"></a>
-    <a href="Equipment_Reservation.php"><img  src="resource/img/Malolos.png" alt="Malolos" class="camp_picture"></a>
+    <a href="Manila/Equipment_Reservation.php"><img src="resource/img/Manila.png" alt="Manila" class="camp_picture"></a>
+    <a href="Manila/Equipment_Reservation.php"><img src="resource/img/Makati.png" alt="Makati" class="camp_picture"></a>
+    <a href="Manila/Equipment_Reservation.php"><img  src="resource/img/Malolos.png" alt="Malolos" class="camp_picture"></a>
     </div>
   </header>
           

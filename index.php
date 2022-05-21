@@ -68,9 +68,7 @@
           <input type="submit" name="sub" value="Track">
           </div>
       </form>
-    </div>
-
-
+    
     <div class="table-responsive">
             <table class = "table table-bordered" >
                 <thead>
@@ -96,7 +94,7 @@
                 </thead>
             </table>
         </div>
-
+      </div>
   </section>
 
  

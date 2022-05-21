@@ -1,4 +1,6 @@
-<?php include('PHP/Admin/Alogin.php')?>
+<?php include('PHP/Admin/Alogin.php')
+
+?>
 
 <!doctype html>
 <html lang="en">
@@ -29,7 +31,7 @@
     </div>
 
     <div id="mySidenav" class="sidenav">
-      <a href="index.php" id="Home"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="white" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>&nbsp;&nbsp; Home</a>
+      <a href="index.php" id="Home"> Back</a>
     </div>
     
     <div class="containered">
