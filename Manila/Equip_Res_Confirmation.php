@@ -1,4 +1,5 @@
 <?php
+  //UPDATE June 7 2022 Added User and Office option//
    include('PHP/EquipRes/insertRes.php');
   include('PHP/EquipRes/Cancel_Res.php');
 ?>
@@ -32,7 +33,7 @@
     </div>
 
      <div id="mySidenav" class="sidenav">
-      <a href="../index.php" id="Home"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="white" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>&nbsp;&nbsp; Home</a>
+      <a href="../Logout.php" id="Home"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="white" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>&nbsp;&nbsp; Home</a>
     </div>
 
     <div class="containered">
@@ -42,18 +43,21 @@
                 <thead>
                   <tr>
                       <th class="tHead">Reservation ID:</th>
+                      <th class="tHead">User</th>
+                      <th class="tHead">Location</th>
                       <th class="tHead">Name</th>
+                      <th class="tHead">School ID</th>
                       <th class="tHead">School</th>
                       <th class="tHead">Email</th>
                       <th class="tHead">Room/Venue</th>
                       <th class="tHead">Nature</th>
                       <th class="tHead">Purpose</th>
-                      <th class="tHead">Equipment ID</th>
-                      <th class="tHead">type</th>
+                      <th class="tHead">Equipment</th>
                       <th class="tHead">Date</th>
                       <th class="tHead">Time Start</th>
                       <th class="tHead">Time End</th>
-                      <th class="tHead">Campus</th>
+                    
+
                   <tbody>
                       <?php include('PHP/EquipRes/ViewReservation.php');?>
                   </tbody>

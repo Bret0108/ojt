@@ -1,4 +1,6 @@
 <?php
+// LAST EDIT ADDED SCHOOL ID COLUMN ON WHOLE SYSTEM MAY 26 2022/Updated Phone Screen Compatibility//
+//Updated june 11 2022 removed facility reservation option//
     error_reporting (E_ALL ^ E_NOTICE);
 ?>
 
@@ -29,9 +31,12 @@
       </nav>
 
       <div id="mySidenav" class="sidenav">
-      <a href="#home" id="Home"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="white" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>&nbsp;&nbsp; Home</a>
+      <a href="Forms.php" id="Home"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-file-earmark" viewBox="0 0 16 16">
+      <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
+      </svg>&nbsp;&nbsp; Forms</a>
         <a href="Login.php" id="AboutUs"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="white" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>&nbsp;&nbsp;Login</a>
-        <a href="#contactus" id="ContactUs"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" color="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>&nbsp; Tracking</a>
+        <a href="Tracker_reservation.php" id="ContactUs"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>&nbsp; Tracking</a>
       </div>
     </div>
   </div>
@@ -43,59 +48,13 @@
           <br/>
           <span class="Heretxt">We got you!</span>
         </h1>
-        <a href="Equipment_Campus.php" class="btn btn-ghost">Equipment</a>
-        <a href="Facility_Campus.php" class="btn btn-ghost">Facilities</a>
+        <a href="redirect.php" class="btn btn-ghost">Reserve Now</a>
       </div>
   </div>
   </div>
   </header>
 
 
-  <section class="section3" id="contactus">
-    <h3 class="contact">Reservation tracker</h3>
-    <div class="containered">
-      <form action="" method="GET">
-         <h5 class="TrackerInstruction">Type in your Reservation ID to view your reservation</h5>
-        <div class="row">
-          <div class="col-25">
-            <label for="fname">Reservation ID</label>
-          </div>
-          <div class="col-75">
-            <input class="form-control" type="text" id="fname" name="Res_id" placeholder=" " required>
-          </div>
-        </div>
-          <div class="rows">
-          <input type="submit" name="sub" value="Track">
-          </div>
-      </form>
-    
-    <div class="table-responsive">
-            <table class = "table table-bordered" >
-                <thead>
-                  <tr>
-                      <th class="tHead">Reservation ID</th>
-                      <th class="tHead">Name</th>
-                      <th class="tHead">School</th>
-                      <th class="tHead">Email</th>
-                      <th class="tHead">Room/Venue</th>
-                      <th class="tHead">Nature</th>
-                      <th class="tHead">Purpose</th>
-                      <th class="tHead">Equipment/Facility ID</th>
-                      <th class="tHead">type</th>
-                      <th class="tHead">Date</th>
-                      <th class="tHead">Time Start</th>
-                      <th class="tHead">Time End</th>
-                      <th class="tHead">Status</th>
-                      <th class="tHead">Campus</th>
-                  <tbody>
-                      <?php include('PHP/Res_Tracker.php');?>
-                  </tbody>
-                  </tr>
-                </thead>
-            </table>
-        </div>
-      </div>
-  </section>
 
  
   <script src="resource/js/script.js"></script>

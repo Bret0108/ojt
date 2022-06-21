@@ -1,14 +1,26 @@
 <?php
+  //Last Edit May 31 2022//
+  //Updated June 9 2022 Removed Equipment/Facility option in search form//
   session_start();
   error_reporting(0);
-  $userchkr = $_SESSION['Username'];
+  include('../Connection/Connection.php');
+ $userchkr = $_SESSION['Username'];
 
-  if($userchkr == NULL){
+  $ALA = "SELECT * FROM admin_login WHERE `Username` = '$userchkr'";
+  $ac = mysqli_query($con, $ALA);
+  $Access = mysqli_fetch_assoc($ac);
+  $pasok = $Access['Root'];
+
+   if($userchkr == NULL){
       header('location: ../Login.php');
   }
 
-  else{
-    
+  else if($pasok == 'YES'){
+      
+  }
+
+   else{
+    header('location: ../Manila/Admin_home.php');
   }
 
 ?>
@@ -40,13 +52,14 @@
     </div>
     </div>
     <div id="mySidenav" class="sidenav">
-      <a href="Admin_home.php" id="Home"> Back</a>
+      <a href="Admin_home.php" id="Home">Back</a>
+      <a href="Utilization.php" id="Pending">Utilization</a>
     </div>
     
-     <h3 class="contact">Reservation List</h3>
+     <h3 class="contact">Reservation Records</h3>
       <div class="containeredP">
       <form action="" method="POST">
-         <h5 class="TrackerInstruction">Select Reservation Status</h5>
+         <h5 class="TrackerInstruction">Search Reservation</h5>
          <div class="row">
           <div class="col-25">
             <label for="fname">Status</label>
@@ -60,16 +73,49 @@
                  </select>
           </div>
 
-          <div class="col-25">
-            <label for="fname">Equipment/Facility</label>
+           <div class="col-25">
+            <label for="fname">Month</label>
           </div>
           <div class="col-75">
-                 <select name="pili1">
-                 <option  value="Equipment">Equipment</option>
-                 <option  value="Facility">Facility</option>
+                 <select name="pili2">
+                <option  value=" ">Select</option>
+                 <option  value="January">January</option>
+                 <option  value="Febuary">Febuary</option>
+                 <option  value="March">March</option>
+                 <option  value="April">April</option>
+                 <option  value="May">May</option>
+                 <option  value="June">June</option>
+                 <option  value="July">July</option>
+                 <option  value="August">August</option>
+                 <option  value="September">September</option>
+                 <option  value="October">October</option>
+                 <option  value="November">November</option>
+                 <option  value="December">December</option>
                  </select>
           </div>
 
+          <div class="col-25">
+            <label for="subject">Year</label>
+          </div>
+          <div class="col-75">
+            <input class="form-control" type="text" id="Year" value="" name="pili3"  placeholder="Year">
+          </div>
+
+          <div class="col-25">
+            <label for="fname">Day</label>
+          </div>
+          <div class="col-75">
+            <input class="form-control" type="date" id="nAmE" name="nma" placeholder=" ">
+          </div>
+
+           <div class="col-25">
+            <label for="subject">Name</label>
+          </div>
+          <div class="col-75">
+            <input class="form-control" type="text" id="Nme" value="" name="nme"  placeholder="Name">
+          </div>
+
+        </div>
           <div class="rows">
           <input type="submit" name="check" value="Check">
           </div>
@@ -78,23 +124,31 @@
      </div>
 
      <div class="containeredP">
-        <h3 class="label_Confirm">Equipment/Facility</h3>
+        <h3 id = "view" class="label_Confirm">Equipment/Facility</h3>
+        <div class="rows" style="margin-bottom: 10px;">
+            <a class="btn btn-success" href="Records_Print.php" role="button">PRINT</a>
+          </div>
          <div class="table-responsive">
-            <table class = "table table-bordered" >
+            <table class = "table table-bordered">
                 <thead>
                   <tr>
                       <th class="tHead">Status</th>
+                      <th class="tHead">Remarks</th>
+                       <th class="tHead">Reservation ID</th>
+                      <th class="tHead">Equipment</th>
+                      <th class="tHead">Date Requested</th>
+                      <th class="tHead">User</th>
+                      <th class="tHead">Office</th>
                       <th class="tHead">Reservation Date</th>
                       <th class="tHead">Time Start</th>
                       <th class="tHead">Time End</th>
-                      <th class="tHead">Reservation ID</th>
                       <th class="tHead">Name</th>
-                       <th class="tHead">School</th>
+                      <th class="tHead">School ID</th>
+                      <th class="tHead">School</th>
                       <th class="tHead">Email</th>
                       <th class="tHead">Room/Venue</th>
                       <th class="tHead">Nature</th>
-                       <th class="tHead">Purpose</th>
-                      <th class="tHead">Equipment/Facility</th>
+                      <th class="tHead">Purpose</th>
                       <th class="tHead">Campus</th>
                   <tbody>
                       <?php include('PHP/Admin/Reservation_viewer.php');?>
@@ -110,24 +164,7 @@
   </header>
 
  
- 
 
-   <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md">
-          <p class="ft2">
-            Sample for OJT Project purposes<br/>&nbsp;&nbsp;&nbsp;
-            all rights reserve 2022<br/>&nbsp;&nbsp;&nbsp;
-            <i class="fab fa-facebook-square"></i>
-            <i class="fab fa-twitter-square"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-youtube"></i>
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
   <script src="resource/js/script.js"></script>
   <script src="vendor/js/jquery.js"></script>
   <script src="vendor/js/popper.js"></script>

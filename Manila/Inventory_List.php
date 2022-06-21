@@ -1,14 +1,29 @@
 <?php
+//Update June 2 2022 Removed Facility options//
+//Update June 3 2022 Added Condemned option with condemn date added purchase date Added office option//
+//June 08 2022 Update created print option//
+//Update June 9 2022 Added category option//
+//Update June 16 2022 removed free search changed to dropdown Status and Location//
   session_start();
+  include('../Connection/Connection.php');
   error_reporting(0);
   $userchkr = $_SESSION['Username'];
 
-  if($userchkr == NULL){
+  $ALA = "SELECT * FROM admin_login WHERE `Username` = '$userchkr'";
+  $ac = mysqli_query($con, $ALA);
+  $Access = mysqli_fetch_assoc($ac);
+  $pasok = $Access['Root'];
+
+   if($userchkr == NULL){
       header('location: ../Login.php');
   }
 
-  else{
-    
+  else if($pasok == 'YES'){
+      
+  }
+
+   else{
+    header('location: ../Manila/Admin_home.php');
   }
 
 ?>
@@ -44,17 +59,53 @@
       <a href="Admin_home.php" id="Home"> Back</a>
     </div>
     
-     <h3 class="contact">Equipment/Facility List</h3>
+     <h3 class="contact">Equipment List</h3>
       <div class="containeredP">
       <form action="" method="POST">
-         <h5 class="TrackerInstruction">Type Equipment/Facility type</h5>
+         <h5 class="TrackerInstruction">Search for Equipment</h5>
         <div class="row">
-          <div class="col-25">
-            <label for="fname">Ex: Laptop,Microphone, Projector</label>
+           <div class="col-25">
+            <label for="fname">Type</label>
           </div>
           <div class="col-75">
-                 <input class="form-control" type="text" id="Iny" name="Eqi_type" placeholder=" ">
+                 <select name="pili">
+                <?php $sql = "SELECT type FROM `tbl_equipment` GROUP BY `type`";
+                $all_categories = mysqli_query($con,$sql); 
+                while ($category = mysqli_fetch_array(
+                        $all_categories,MYSQLI_ASSOC)):; 
+                ?>
+                <option value="<?=$category['type'];?>"><?=$category['type'];?>
+                </option>
+                  <?php 
+                      endwhile; 
+                  ?>
+                 </select>
           </div>
+
+          <div class="col-25">
+            <label for="fname">Status</label>
+          </div>
+          <div class="col-75">
+                 <select class="form-control" type="text" id="Iny" name="Eqi_type" placeholder=" ">
+                   <option value=" ">Select</option>
+                   <option value="Available">Available</option>
+                   <option value="Condemned">Condemned</option>
+                 </select>
+          </div>
+
+            <div class="col-25">
+            <label for="fname">Location</label>
+          </div>
+          <div class="col-75">
+                 <select class="form-control" type="text" id="Iny" name="Opis" placeholder=" ">
+                   <option value=" ">Select</option>
+                   <option value="TLTD_MAIN">TLTD MAIN</option>
+                   <option value="DENT_SCI">DENT SCI</option>
+                   <option value="LAH_SUB_CENTER">LAH SUB CENTER</option>
+                 </select>
+          </div>
+
+
         </div>
           <div class="rows">
           <input type="submit" name="check" value="Check">
@@ -63,17 +114,23 @@
      </div>
 
      <div class="containeredP">
-        <h3 class="label_Confirm">Equipment/Facility</h3>
+        <h3 class="label_Confirm">Equipment</h3>
+         <div class="rows" style="margin-bottom: 10px;">
+            <a class="btn btn-success" href="Inventory_Print.php" role="button">PRINT</a>
+          </div>
          <div class="table-responsive">
             <table class = "table table-bordered" >
                 <thead>
                   <tr>
-                      <th class="tHead">Equip_ID</th>
+                      <th class="tHead">Equipment Tag</th>
                       <th class="tHead">type</th>
-                      <th class="tHead">name</th>
+                      <th class="tHead">Brand Name</th>
+                      <th class="tHead">Model</th>
                       <th class="tHead">information</th>
-                      <th class="tHead">Availability</th>
-                      <th class="tHead">Site</th>
+                      <th class="tHead">Status</th>
+                      <th class="tHead">Purchase Date</th>
+                      <th class="tHead">Condemn Date</th>
+                      <th class="tHead">Location</th>
                   <tbody>
                       <?php include('PHP/Admin/Inventory_Equipment_list.php');?>
 
@@ -89,12 +146,13 @@
 
   <section class="updel">
   <?php include('PHP/Admin/Inventory_AED.php') ?>
-  <h3 class="contact">Update List</h3>
+  <h3 class="contact">Update Equipment List</h3>
       <div class="containeredP">
+        <h3 class="label_Confirm">Update or Delete</h3>
       <form action="" method="POST">
         <div class="row">
           <div class="col-25">
-            <label for="fname">Type in Equipment/Facility ID to edit/delete</label>
+            <label for="fname">Type in Equipment Tag to Update/Delete</label>
           </div>
           <div class="col-75">
                  <input class="form-control" type="text" id="Iny" name="EF_ID" placeholder=" ">
@@ -107,13 +165,14 @@
      </div>
 
      <div class="containeredP">
+      <h3 class="label_Confirm">Add New Equipment</h3>
       <form action="" method="POST">
         <div class="row">
           <div class="col-25">
-            <label for="fname">ID</label>
+            <label for="fname">Equipment Tag</label>
           </div>
           <div class="col-75">
-                 <input class="form-control"  type="text" id="Iny" name="IDe" value="<?=$updt['Equip_ID'];?><?=$updt1['Faci_ID'];?>" placeholder="">
+                 <input class="form-control"  type="text" id="Iny" name="IDe" value="<?=$updt['Tag'];?>" placeholder="">
           </div>
         </div>
         <div class="row">
@@ -121,43 +180,78 @@
             <label for="fname">Type</label>
           </div>
           <div class="col-75">
-                 <input class="form-control" type="text" id="Iny" name="type" value="<?=$updt['type'];?><?=$updt1['type'];?>" placeholder="">
+                 <input class="form-control" type="text" id="Iny" name="type" value="<?=$updt['type'];?>" placeholder="">
           </div>
         </div>
         <div class="row">
           <div class="col-25">
-            <label for="fname">Name</label>
+            <label for="fname">Brand name</label>
           </div>
           <div class="col-75">
-                 <input class="form-control" type="text" id="Iny" name="name" value="<?=$updt['name'];?><?=$updt1['name'];?>" placeholder="">
+                 <input class="form-control" type="text" id="Iny" name="name" value="<?=$updt['name'];?>" placeholder="">
           </div>
+        </div>
+
+         <div class="row">
+          <div class="col-25">
+            <label for="fname">Model</label>
+          </div>
+          <div class="col-75">
+                 <input class="form-control" type="text" id="Iny" name="mOwDel" value="<?=$updt['MODel'];?>" placeholder="">
+          </div>
+
         </div>
          <div class="row">
           <div class="col-25">
             <label for="fname">Information</label>
           </div>
           <div class="col-75">
-                 <input class="form-control" type="text" id="Iny" name="information" value="<?=$updt['information'];?><?=$updt1['information'];?>" placeholder=" ">
+                 <input class="form-control" type="text" id="Iny" name="information" value="<?=$updt['information'];?>" placeholder=" ">
           </div>
         </div>
-        <div class="row">
-          <div class="col-25">
-            <label for="fname">Availability</label>
-          </div>
-          <div class="col-75">
-                 <input class="form-control" type="text" id="Iny" name="avail" value="<?=$updt['Availability'];?><?=$updt1['Availability'];?>" placeholder=" ">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-25">
-            <label for="fname">Equipment/Facility</label>
-          </div>
-          <div class="col-75">
-                 <select name="pili">
-                 <option  value="Equipment">Equipment</option>
-                 <option  value="Facility">Facility</option>
-                 </select>
 
+         <div class="row">
+          <div class="col-25">
+            <label for="fname">Purchase Date</label>
+          </div>
+          <div class="col-75">
+                 <input class="form-control" name="purchDate" type="Date" placeholder=" " min="2022" max="3000" value="<?=$updt['Purchase Date'];?>">
+          </div>
+        </div>
+
+         <div class="row">
+          <div class="col-25">
+            <label for="fname">Location</label>
+          </div>
+            <div class="col-75">
+                 <select name="pili1" id = "oFfice">
+                  <option  value=" ">Select</option>
+                 <option  value="TLTD_MAIN">TLTD MAIN</option>
+                 <option  value="Dent_Sci">DENT SCI</option>
+                 <option  value="LAH_sub_center">LAH sub Center</option>
+                 </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">Status</label>
+          </div>
+            <div class="col-75">
+                 <select name="pili" id = "stats" onchange = "showHide()">
+                  <option  value=" ">Select</option>
+                 <option  value="Available">Available</option>
+                 <option  value="Condemned">Condemned</option>
+                 </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-25" name="hidden-label" id="hidden-label">
+            <label for="fname">Date Condemned</label>
+          </div>
+          <div class="col-75" name="hidden-panel" id="hidden-panel">
+                 <input class="form-control" name="conDate" type="Date" placeholder=" " min="2022" max="3000">
           </div>
         </div>
 
@@ -172,22 +266,7 @@
   </section>
  
 
-   <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md">
-          <p class="ft2">
-            Sample for OJT Project purposes<br/>&nbsp;&nbsp;&nbsp;
-            all rights reserve 2022<br/>&nbsp;&nbsp;&nbsp;
-            <i class="fab fa-facebook-square"></i>
-            <i class="fab fa-twitter-square"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-youtube"></i>
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
+  
   <script src="resource/js/script.js"></script>
   <script src="vendor/js/jquery.js"></script>
   <script src="vendor/js/popper.js"></script>

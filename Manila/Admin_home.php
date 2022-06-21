@@ -1,4 +1,8 @@
 <?php
+//LAST EDIT MAY 31 2022 Updated tables//
+//LAST EDIT June 2 2022 Added Search bar for searching ongoing and reserved reservations//
+//Update June 9 2022 Changed table values, Added User and Office Column, Updated Equipment Tag value, added Print option//
+//Updated June 12 2022 Added Form tab//
   session_start();
   error_reporting(0);
   $userchkr = $_SESSION['Username'];
@@ -26,6 +30,7 @@
   <title>CEUTLTD</title>
   </head>
   <body>
+
     <header class="bahay">
     <div class="container-fluid navcon">
     <div class="container hakdog">
@@ -40,59 +45,84 @@
     </div>
     </div>
 
-    <h3 class="contact" id="contact">Scheduled Reservations today</h3>
+    <h3 class="contact" id="contact">Search for Reservation</h3>
     
     <div class="containeredP">
-      <h3 class="label_Confirm">Today's Reservation</h3>  
+      <h3 class="label_Confirm">Search Reservation</h3> 
+      <form action="" method="GET">
+         <h5 class="TrackerInstruction">Type in Reservation ID</h5>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">Reservation ID</label>
+          </div>
+          <div class="col-75">
+            <input class="form-control" type="text" id="Iny" name="Iny" placeholder=" ">
+          </div>
+        </div>
+          <div class="rows" style="margin-bottom: 10px;">
+          <input type="submit" name="search" value="Search">
+          </div>
+      </form> 
         <div class="table-responsive">
-            <table class = "table table-bordered" >
+            <table class = "table table-bordered">
                 <thead>
                   <tr>
                       <th class="tHead">Action</th>
                       <th class="tHead">Reservation ID</th>
-                      <th class="tHead">Name</th>
-                      <th class="tHead">School</th>
-                      <th class="tHead">Email</th>
-                      <th class="tHead">Room/Venue</th>
-                      <th class="tHead">Nature</th>
-                      <th class="tHead">Purpose</th>
-                      <th class="tHead">Equipment/Facility ID</th> 
+                      <th class="tHead">Equipment</th> 
                       <th class="tHead">Date</th>
                       <th class="tHead">Time Start</th>
                       <th class="tHead">Time End</th>
-                      <th class="tHead">Status</th>
-                      <th class="tHead">Campus</th>
                   <tbody>
                        <?php include('PHP/Admin/Admin_Confirm.php');?>
                        <?php include('PHP/Admin/Admin_Cancel.php'); ?>
                       <?php include('PHP/Admin/Admin_TodayRes.php');?>
-
                   </tbody>
                   </tr>
                 </thead>
             </table>
           </div>
+          <div class="rows" style="margin-top: 10px;">
+            <a class="btn btn-success" href="Reservation_Print.php" role="button">PRINT</a>
+          </div>
+        </div>
 
-
-      <h3 class="label_Confirm">Ongoing Reservations</h3>  
+      <div class="containeredP">
+       <h3 class="label_Confirm">TLTD PASS</h3> 
+      <form action="" method="POST">
+         <h5 class="TrackerInstruction">Type in TLTD pass no.</h5>
+        <div class="row">
+           <div class="col-25">
+                  <label for="fname">Location</label>
+                </div>
+                  <div class="col-75">
+                       <select name="LoCatIon" id ="office">
+                       <option  value=" ">Select</option>
+                       <option  value="TLTD_MAIN">TLTD_MAIN</option>
+                       <option  value="DENT_SCI">DENT_SCI</option>
+                       <option  value="LAH_SUB_CENTER">LAH_SUB_CENTER</option>
+                      </select>
+                </div>
+          <div class="col-25">
+            <label for="fname">Pass No.</label>
+          </div>
+          <div class="col-75">
+            <input class="form-control" type="text"  name="Pass" placeholder=" ">
+          </div>
+        </div>
+          <div class="rows" style="margin-bottom: 10px;">
+          <input type="submit" name="search1" value="Search">
+          </div>
+      </form> 
         <div class="table-responsive">
             <table class = "table table-bordered" >
                 <thead>
                   <tr>
                       <th class="tHead">Action</th>
+                      <th class="tHead">Pass Number</th>
                       <th class="tHead">Reservation ID</th>
-                      <th class="tHead">Name</th>
-                      <th class="tHead">School</th>
-                      <th class="tHead">Email</th>
-                      <th class="tHead">Room/Venue</th>
-                      <th class="tHead">Nature</th>
-                      <th class="tHead">Purpose</th>
-                      <th class="tHead">Equipment/Facility ID</th>
-                      <th class="tHead">Date</th>
-                      <th class="tHead">Time Start</th>
-                      <th class="tHead">Time End</th>
-                      <th class="tHead">Status</th>
-                      <th class="tHead">Campus</th>
+                      <th class="tHead">Equipment</th>
+                      <th class="tHead">Return Time</th>
                   <tbody>
                     
                       <?php include('PHP/Admin/Admin_OngoingRes.php');?>
@@ -100,10 +130,9 @@
                   </tr>
                 </thead>
             </table>
-    </div>
-    <a class="btn btn-success" style="margin-top: 10px; width:100px; font-size: 15px;" href="Reservation_List.php">Reservation<br> list</a>
-
+  </div>
   </header>
+
 
   <section class="Pending" id="pending">
       <h3 class="contact">Pending Reservation request</h3>
@@ -111,24 +140,15 @@
       <div class="containeredP">
         <h3 class="label_Confirm">Pending Reservation </h3>
          <div class="table-responsive">
-            <table class = "table table-bordered" >
+            <table class="table table-bordered table-hover">
                 <thead>
                   <tr>
                       <th class="tHead">Action</th>
                       <th class="tHead">Reservation ID</th>
-                      <th class="tHead">Name</th>
-                      <th class="tHead">School</th>
-                      <th class="tHead">Email</th>
-                      <th class="tHead">Room/Venue</th>
-                      <th class="tHead">Nature</th>
-                      <th class="tHead">Purpose</th>
-                      <th class="tHead">Equipment/Facility ID</th>
-                      <th class="tHead">type</th>
+                      <th class="tHead">Equipment</th> 
                       <th class="tHead">Date</th>
                       <th class="tHead">Time Start</th>
                       <th class="tHead">Time End</th>
-                      <th class="tHead">Status</th>
-                      <th class="tHead">Campus</th>
                   <tbody>
                       <?php include('PHP/Admin/Admin_pending.php');?>
 
@@ -142,13 +162,13 @@
   </section>
 
   <section class="Inventory" id="inventory">
-      <h3 class="contact">Inventory</h3>
+      <h3 class="contact">Reservation Checker</h3>
       <div class="containeredP">
       <form action="" method="GET">
-         <h5 class="TrackerInstruction">Type in Equipment/Facility ID</h5>
+         <h5 class="TrackerInstruction">Type in Reservation ID</h5>
         <div class="row">
           <div class="col-25">
-            <label for="fname">Equipment/Facility ID</label>
+            <label for="fname">Reservation ID</label>
           </div>
           <div class="col-75">
             <input class="form-control" type="text" id="Iny" name="Iny" placeholder=" ">
@@ -158,21 +178,17 @@
           <input type="submit" name="check" value="Check">
           </div>
       </form>
-      <a class="btn btn-success" style="margin-top: 10px; width:100px; font-size: 15px;" href="Inventory_List.php">Inventory<br> list</a>
     </div>
 
     <div class="containeredP">
-        <h3 class="label_Confirm">Equipment/Facility Reservation checker</h3>
+        <h3 class="label_Confirm">Reservation checker</h3>
          <div class="table-responsive">
             <table class = "table table-bordered" >
                 <thead>
                   <tr>
-                      <th class="tHead">Equipment/Facility ID/</th>
-                      <th class="tHead">Equipment/Facility Name</th>
-                      <th class="tHead">Equipment/Facility type</th>
-                      <th class="tHead">Equipment/Facility Info</th>
-                      <th class="tHead">Site</th>
+                      <th class="tHead">Equipment Tag</th>
                       <th class="tHead">Reservation ID</th>
+                      <th class="tHead">Reservation Status</th>
                       <th class="tHead">Reservation Date</th>
                       <th class="tHead">Time Start</th>
                       <th class="tHead">Time End</th>
@@ -186,14 +202,14 @@
           </div>
     </div>
 
-
-
   </section>
 
   <div id="mySidenav" class="sidenav">
-      <a href="#contact" id="Home">Home</a>
-      <a href="#pending" id="Pending">Pending</a>
-      <a href="#inventory" id="Inventory">Inventory</a>
+      <a href="#contact" id="Home"><?PHP echo $_SESSION['Username']; ?></a>
+      <a href="Reservation_List.php" id="Pending">Records</a>
+      <a href="Inventory_List.php" id="Inventory">Inventory</a>
+      <a href="Admin_Access.php" id="Access">Access</a>
+      <a href="Forms_list.php" id="Forms">Forms</a>
       <a href="../Logout.php" id="Logout">Logout</a>
     </div>
  
@@ -203,6 +219,8 @@
   <script src="vendor/js/jquery.js"></script>
   <script src="vendor/js/popper.js"></script>
   <script src="vendor/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
   
   </body>
 </html>

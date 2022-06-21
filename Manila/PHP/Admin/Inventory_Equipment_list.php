@@ -1,12 +1,24 @@
 <?PHP
+session_start();
+//Update June 2 2022 Removed Facilities queries//
+//Updated June 3 2022 Added purchase condem date office column, added search parameter office//
+//Updated June 9 2022 Added Category option//
+//Updated June 16 2022 change query search parameters, added model variable//
 error_reporting (E_ALL ^ E_NOTICE);
 include('../Connection/Connection.php');
+
 
 if(isset($_POST['check'])){
 
 $option = $_POST['Eqi_type'];
+$tYpe = $_POST['pili'];
+$Opis = $_POST['Opis'];
 
-$qry= "SELECT * FROM `tbl_equipment` WHERE `type` LIKE '%$option%' OR `Equip_ID` Like '%$option%'";
+$_SESSION['tYpe'] = $tYpe;
+$_SESSION['option'] = $option;
+$_SESSION['Opis'] = $Opis; 
+
+$qry= "SELECT * FROM `tbl_equipment` WHERE `type` = '$tYpe' AND `Stats` = '$option' AND `Office` = '$Opis'";
 $run = mysqli_query($con, $qry);
 
 				if(mysqli_num_rows($run) > 0){
@@ -14,38 +26,15 @@ $run = mysqli_query($con, $qry);
 
 									?>
 										<tr>
-											<td><?= $row['Equip_ID'];?></td>
+											<td><?= $row['Tag'];?></td>
 											<td><?= $row['type'];?></td>
 											<td><?= $row['name'];?></td>
+											<td><?= $row['MODel'];?></td>
 											<td><?= $row['information'];?></td>
-											<td><?= $row['Availability'];?></td>
-											<td><?= $row['Site'];?></td>
-										</tr>
-									<?php
-									
-								}
-				}
-
-}
-
-if(isset($_POST['check'])){
-
-$option1 = $_POST['Eqi_type'];
-
-$qry1 = "SELECT * FROM `tbl_facilities` WHERE `type` LIKE '%$option%' OR `Faci_ID` Like '%$option%' ";
-$run1 = mysqli_query($con, $qry1);
-
-				if(mysqli_num_rows($run1) > 0){
-								foreach($run1 as $row1){
-
-									?>
-										<tr>
-											<td><?= $row1['Faci_ID'];?></td>
-											<td><?= $row1['type'];?></td>
-											<td><?= $row1['name'];?></td>
-											<td><?= $row1['information'];?></td>
-											<td><?= $row1['Availability'];?></td>
-											<td><?= $row1['Site'];?></td>
+											<td><?= $row['Stats'];?></td>
+											<td><?= $row['Purchase Date'];?></td>
+											<td><?= $row['Condemn Date'];?></td>
+											<td><?= $row['Office'];?></td>
 										</tr>
 									<?php
 									

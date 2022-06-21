@@ -11,6 +11,7 @@ $errors = array();
 if (isset($_POST['login_user'])) {
   $username = mysqli_real_escape_string($con, $_POST['username']);
   $password = mysqli_real_escape_string($con, $_POST['password']);
+  
 
   if (empty($username)) {
     array_push($errors, "Username is required");
@@ -19,28 +20,22 @@ if (isset($_POST['login_user'])) {
     array_push($errors, "Password is required");
   }
 
+
   if (count($errors) == 0) {
     
-    $query = "SELECT * FROM `admin_login` WHERE `Username` ='$username' AND `Password`='$password'";
+    $query = "SELECT * FROM `admin_login` WHERE `Username` ='$username'";
     $results = mysqli_query($con, $query);
     $row = mysqli_fetch_assoc($results);
     if (mysqli_num_rows($results) == 1) {
-
-      if($row['Access'] == 'Manila'){
-      $_SESSION['Username'] = $username;
-      $_SESSION['Password'] = $password;
-      header('location: Manila/Admin_home.php');
+      $hashed_password = $row['Password'];
+      if (password_verify($password, $hashed_password)) {
+        $_SESSION['Username'] = $username;
+        $_SESSION['Password'] = $password;
+        header('location: Manila/Admin_home.php');
       }
-      else if($row['Access'] == 'Makati'){
-        echo "Makati coming soon";
+      else {
+        array_push($errors, "Wrong username/password combination");    
       }
-      else if($row['Access'] == 'Malolos'){
-        echo "Malolos coming soon";
-      }
-    }
-    else {
-        array_push($errors, "Wrong username/password combination");
-        
     }
   }
 }
