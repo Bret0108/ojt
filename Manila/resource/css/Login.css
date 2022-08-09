@@ -170,6 +170,37 @@ input[type=submit]:hover {
 	display: none;
 }
 
+#hidden-panel2 {
+	display: none;
+}
+
+#hidden-label2 {
+	display: none;
+}
+
+#hidden-panel3 {
+	display: none;
+}
+
+#hidden-label3 {
+	display: none;
+}
+
+#hidden-panel4 {
+	display: none;
+}
+
+#hidden-label4 {
+	display: none;
+}
+#hidden-panel5 {
+	display: none;
+}
+
+#hidden-label5 {
+	display: none;
+}
+
 
 .contact{
 	background-color:rgb(2,7,93);

@@ -21,12 +21,4 @@ else if(isset($_POST['Didnot'])){
 }
 
 
-else if(isset($_POST['Remarks'])){
-	$Res_ids3 = $_POST['Remarks'];
-	$Comment = $_POST['comment'];
-	$sqls3 = "UPDATE `reservation` SET `Remarks`= '$Comment', `Checked_By` = '$userchkr', `Last_Update` = NOW() WHERE `Res_id` = $Res_ids3 AND `Status` = 'ONGOING'";
-	$run3 = mysqli_query($con, $sqls3);
-}
-
-
 ?>

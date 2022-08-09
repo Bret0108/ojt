@@ -50,6 +50,44 @@ function venueRoom() {
     }
 }
 
+function pass() {
+    let loCatIon = document.getElementById('LoCatIon')
+
+    if (loCatIon.value == "TLTD_MAIN") {
+        document.getElementById('hidden-panel1').style.display = 'block'
+         document.getElementById('hidden-label1').style.display = 'block'
+         document.getElementById('hidden-panel2').style.display = 'none'
+         document.getElementById('hidden-label2').style.display = 'none'
+          document.getElementById('hidden-panel3').style.display = 'none'
+         document.getElementById('hidden-label3').style.display = 'none'
+    }
+    else if(loCatIon.value == "DENT_SCI"){
+      document.getElementById('hidden-label2').style.display = 'block'
+        document.getElementById('hidden-panel2').style.display = 'block'
+         document.getElementById('hidden-panel1').style.display = 'none'
+         document.getElementById('hidden-label1').style.display = 'none'
+          document.getElementById('hidden-panel3').style.display = 'none'
+         document.getElementById('hidden-label3').style.display = 'none'
+    } 
+
+    else if(loCatIon.value == "LAH_SUB_CENTER"){
+        document.getElementById('hidden-panel3').style.display = 'block'
+         document.getElementById('hidden-label3').style.display = 'block'
+        document.getElementById('hidden-panel1').style.display = 'none'
+         document.getElementById('hidden-label1').style.display = 'none'
+        document.getElementById('hidden-label2').style.display = 'none'
+        document.getElementById('hidden-panel2').style.display = 'none'
+    }
+    else{
+       document.getElementById('hidden-panel1').style.display = 'none'
+         document.getElementById('hidden-label1').style.display = 'none'
+        document.getElementById('hidden-label2').style.display = 'none'
+        document.getElementById('hidden-panel2').style.display = 'none'
+         document.getElementById('hidden-panel3').style.display = 'none'
+         document.getElementById('hidden-label3').style.display = 'none'
+    }
+}
+
 
 // When the user clicks the button, open the modal 
 function TnC() {

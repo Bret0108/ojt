@@ -205,7 +205,7 @@
   </section>
 
   <div id="mySidenav" class="sidenav">
-      <a href="#contact" id="Home"><?PHP echo $_SESSION['Username']; ?></a>
+      <a href="Bypass_UserCheck.php" id="Home">Reserve</a>
       <a href="Reservation_List.php" id="Pending">Records</a>
       <a href="Inventory_List.php" id="Inventory">Inventory</a>
       <a href="Admin_Access.php" id="Access">Access</a>

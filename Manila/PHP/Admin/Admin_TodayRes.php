@@ -23,8 +23,8 @@ if(isset($_GET['search'])){
 								<tr>
 									<td>
 										<form method="POST">
-										<a class='btn btn-success' style="text-decoration: none; color:white;" id="myBtn1" onclick="TnC1()" value="">Equipment Pass</a>
-								    	<button class='btn btn-danger' Style="margin-top:10px; Width:115px"  name="Didnot" value="<?= $row['Res_id'];?>">Cancel</button>
+										<a class='btn btn-success' style="text-decoration: none; color:white;" id="myBtn1" onclick="TnC1()" value="" style="Width:115px;">Equipment Pass</a>
+								    	<button class='btn btn-danger' Style="margin-top:10px; Width:175px;"  name="Didnot" value="<?= $row['Res_id'];?>">Cancel</button>
 								    	</form>
 								    </td>
 									<td class="Tracking">
@@ -83,7 +83,7 @@ if(isset($_GET['search'])){
 			            <label for="fname" style="color:black;">Location</label>
 			          </div>
 			            <div class="col-75">
-			                 <select name="LoCatIon" id ="office">
+			                 <select name="LoCatIon" id ="LoCatIon" onchange="pass()">
 			                 <option  value=" ">Select</option>
 			                 <option  value="TLTD_MAIN">TLTD_MAIN</option>
 			                 <option  value="DENT_SCI">DENT_SCI</option>
@@ -91,14 +91,21 @@ if(isset($_GET['search'])){
 			                </select>
 			          </div>
 
+			          <div class="col-25">
+			          	<label for="fname" style="color:black;">Released by</label>
+			          </div>
+			          <div class="col-75">
+			          <input class="form-control" type="text" id="Relsdby" value="" name="Relsdby"  placeholder="Released by" required>
+			          </div> 
 
 
-		           <div class="col-25">
+
+		           <div class="col-25" name="hidden-label1" id="hidden-label1">
 		            <label for="fname" style="color:black;">Pass No.</label>
 		          </div>
-		          <div class="col-75">
-		                 <select name="PassNo">
-		                <?php $sql = "SELECT Pass_ID FROM `tltd_pass` WHERE `State` = 'AVAILABLE' GROUP BY `Pass_ID`";
+		          <div class="col-75" name="hidden-panel1" id="hidden-panel1">
+		                 <select name="PassNo1">
+		                <?php $sql = "SELECT Pass_ID FROM `tltd_pass` WHERE `State` = 'AVAILABLE' AND `Location` = 'TLTD_MAIN' GROUP BY `Pass_ID`";
 		                $all_categories = mysqli_query($con,$sql); 
 		                while ($category = mysqli_fetch_array(
 		                        $all_categories,MYSQLI_ASSOC)):; 
@@ -110,6 +117,43 @@ if(isset($_GET['search'])){
 		                  ?>
 		                 </select>
 		          </div>
+
+		           <div class="col-25" name="hidden-label2" id="hidden-label2">
+		            <label for="fname" style="color:black;">Pass No.</label>
+		          </div>
+		          <div class="col-75" name="hidden-panel2" id="hidden-panel2">
+		                 <select name="PassNo2">
+		                <?php $sql = "SELECT Pass_ID FROM `tltd_pass` WHERE `State` = 'AVAILABLE' AND `Location` = 'DENT_SCI' GROUP BY `Pass_ID`";
+		                $all_categories = mysqli_query($con,$sql); 
+		                while ($category = mysqli_fetch_array(
+		                        $all_categories,MYSQLI_ASSOC)):; 
+		                ?>
+		                <option value="<?=$category['Pass_ID'];?>"><?=$category['Pass_ID'];?>
+		                </option>
+		                  <?php 
+		                      endwhile; 
+		                  ?>
+		                 </select>
+		          </div>
+
+		           <div class="col-25" name="hidden-label3" id="hidden-label3">
+		            <label for="fname" style="color:black;">Pass No.</label>
+		          </div>
+		          <div class="col-75" name="hidden-panel3" id="hidden-panel3">
+		                 <select name="PassNo3">
+		                <?php $sql = "SELECT Pass_ID FROM `tltd_pass` WHERE `State` = 'AVAILABLE' AND `Location` = 'LAH_SUB_CENTER' GROUP BY `Pass_ID`";
+		                $all_categories = mysqli_query($con,$sql); 
+		                while ($category = mysqli_fetch_array(
+		                        $all_categories,MYSQLI_ASSOC)):; 
+		                ?>
+		                <option value="<?=$category['Pass_ID'];?>"><?=$category['Pass_ID'];?>
+		                </option>
+		                  <?php 
+		                      endwhile; 
+		                  ?>
+		                 </select>
+		          </div>
+
 		          	 <div class="col-25">
 		            <label for="fname" style="color:black;">Equipment Tag</label>
 		          </div>

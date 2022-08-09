@@ -53,7 +53,7 @@
     </div>
     </div>
     <div id="mySidenav" class="sidenav">
-      <a href="Admin_home.php" id="Home">Back</a>
+      <a href="Reservation_List.php" id="Home">Back</a>
     </div>
     
      <h3 class="contact">Utilization Equipment/Facility/Instructional Materials</h3>
@@ -82,7 +82,7 @@
                  </select>
           </div>
       <div class="col-25">
-            <label for="fname">Reservation Office</label>
+            <label for="fname">Office location</label>
           </div>
             <div class="col-75">
                  <select name="ofFice" id ="office">

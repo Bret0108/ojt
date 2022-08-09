@@ -28,7 +28,7 @@ if(isset($_POST['search1'])){
 									<td>
 										<form method="POST">
 										 <textarea class="form-control" type="text" id="comment" value=" " name="comment" placeholder="type remarks" style="margin-bottom:10px; background-color:lightblue; color:black;"></textarea>
-										 <button class='btn btn-primary' Style="Width:115px"  name="Remarks"  value="<?= $Arow['Res_id'];?>">Remarks</button>
+										 <input class="form-control" type="text" id="Recivby" value="" name="Recivby"  placeholder="Recieved by"  style="margin-bottom:10px; background-color:lightblue; color:black;" required> 
 										<button class='btn btn-success'  name="Returned" value="<?= $Arow['Res_id'];?>">Returned</button>
 								    	</form>
 								    </td>

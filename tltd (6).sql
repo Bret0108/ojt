@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2022 at 04:33 PM
+-- Generation Time: Aug 09, 2022 at 05:41 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -148,7 +148,8 @@ CREATE TABLE `reservation` (
   `Status` varchar(255) NOT NULL DEFAULT 'NONE',
   `Remarks` varchar(255) NOT NULL DEFAULT 'None',
   `Checked_By` varchar(255) NOT NULL DEFAULT 'None',
-  `Campus` varchar(255) NOT NULL DEFAULT 'MANILA',
+  `Released By` varchar(255) DEFAULT NULL,
+  `Recieved By` varchar(255) DEFAULT NULL,
   `Date_Requested` timestamp NOT NULL DEFAULT current_timestamp(),
   `Last_Update` timestamp NULL DEFAULT NULL,
   `User` varchar(255) DEFAULT NULL,
@@ -159,23 +160,15 @@ CREATE TABLE `reservation` (
 -- Dumping data for table `reservation`
 --
 
-INSERT INTO `reservation` (`Res_id`, `nature`, `Purpose`, `Equipment`, `resDate`, `Time_Start`, `Time_End`, `Room_Venue`, `ReqName`, `SchoolID`, `School`, `Email`, `Status`, `Remarks`, `Checked_By`, `Campus`, `Date_Requested`, `Last_Update`, `User`, `Office`) VALUES
-(10000049, 'Academic,', 'Presentation/Lecture,', '11023351 11023397', '2022-06-16', '10:00', '12:45', 'DCT room 203 ', 'Mr testing testing', '2020-03723', 'MEDICINE', 'Email@email.com', 'RESERVED', 'None', 'Admin', 'MANILA', '2022-06-13 10:40:14', '2022-06-13 10:43:30', 'Teaching', 'TLTD_MAIN'),
-(10000048, 'Academic,', 'Presentation/Lecture,', '11023355 11023397 11023358', '2022-06-12', '11:17', '14:17', 'DCT room 203 ', 'Bret Simoun Fabian', '2020-03768', 'GRADSCHOOL', 'Fabian@yahoo.com', 'COMPLETED', 'None', 'Admin', 'MANILA', '2022-06-11 15:18:30', '2022-06-11 15:19:15', 'Teaching', 'TLTD_MAIN'),
-(10000047, 'Co-curricular/Extra-curricular,', 'Viewing,', '11023352 11023397 11023358 11023360 11023361 11023364 11023366 11023367 11023370 11023372 11023373', '2022-06-21', '10:27', '13:27', 'ICT room 304', 'Ronald bato', '201213', 'DENTISTRY', 'sangeup@sangeup.com', 'COMPLETED', 'None', 'Admin', 'MANILA', '2022-06-11 14:27:42', '2022-06-11 14:28:23', 'Teaching', 'TLTD_MAIN'),
-(10000046, 'Academic,', 'Presentation/Lecture,', '11023351 11023364 11023373 11023381', '2022-06-16', '14:25', '15:25', 'Mvh room 201', 'Bret Simoun Fabian', '2020-03723', 'GRADSCHOOL', 'Fabian@yahoo.com', 'COMPLETED', 'None', 'Admin', 'MANILA', '2022-06-10 18:25:38', '2022-06-10 18:26:05', 'Student', 'TLTD_MAIN'),
-(10000045, 'Academic,', 'Viewing,', '11023355 11023397 11023358 11023361', '2022-06-12', '14:00', '16:00', 'DCT room 203 ', 'Robert macho', '2020-03723', 'NURSING', 'Fabian@yahoo.com', 'COMPLETED', 'None', 'Admin', 'MANILA', '2022-06-10 18:01:18', '2022-06-10 18:01:59', 'Teaching', 'TLTD_MAIN'),
-(10000055, 'Academic,', 'Presentation/Lecture,', '11023351', '2022-06-16', '14:24', '15:24', 'gdlsc', 'BRET SIMOUN FABIAN', '2020-03723', 'SELAMS', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'None', 'Admin', 'MANILA', '2022-06-16 06:25:19', '2022-06-16 06:27:17', 'Student', 'TLTD_MAIN'),
-(10000056, 'Academic,', 'Presentation/Lecture,', '11023392 11023353', '2022-06-16', '14:50', '15:50', 'room 203', 'BRET SIMOUN FABIAN', '2020-03723', 'SAM', 'fabian1103724@ceu.edu.ph', 'COMPLETED', ' test', 'Admin', 'MANILA', '2022-06-16 06:49:17', '2022-06-16 06:51:21', 'Teaching', 'DENT_SCI'),
-(10000057, 'Academic,', 'Presentation/Lecture,', '11023351 11023397', '2022-06-16', '15:30', '16:30', 'ICT room 304', 'BRET SIMOUN FABIAN', '2020-03768', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'None', 'Admin', 'MANILA', '2022-06-16 13:29:36', '2022-06-16 13:33:28', 'Student', 'TLTD_MAIN'),
-(10000059, 'Academic,', 'Presentation/Lecture,', '11023352 11023397', '2022-06-17', '12:12', '14:12', 'DCT room 203 ', 'BRET SIMOUN FABIAN', '2020-03723', 'NHM', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'none', 'Admin', 'MANILA', '2022-06-17 03:12:45', '2022-06-18 06:41:32', 'Teaching', 'TLTD_MAIN'),
-(10000063, 'Academic,', 'Presentation/Lecture,', '11023351 11023361', '2022-06-18', '09:55', '10:55', 'Mvh room 201', 'BRET SIMOUN FABIAN', '2020-03723', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'None', 'Admin', 'MANILA', '2022-06-18 13:57:06', '2022-06-18 14:02:28', 'Teaching', 'TLTD_MAIN'),
-(10000064, 'Academic,', 'Presentation/Lecture,', '11023351 11023397', '2022-06-18', '13:05', '14:05', 'DCT room 203 ', 'BRET SIMOUN FABIAN', '2020-03723', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'RESERVED', 'None', 'Admin', 'MANILA', '2022-06-18 14:05:35', '2022-06-18 14:07:31', 'Student', 'TLTD_MAIN'),
-(10000075, 'Academic,', 'Presentation/Lecture,', '11023351 11023397', '2022-06-21', '13:27', '14:27', 'MVH 201', 'BRET SIMOUN FABIAN', '2020-03723', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'None', 'Admin', 'MANILA', '2022-06-21 05:27:20', '2022-06-21 05:29:14', 'Teaching', 'TLTD_MAIN'),
-(10000076, 'Academic,', 'Presentation/Lecture,', '11023352 11023397', '2022-06-22', '13:34', '14:34', 'LAH 201', 'BRET SIMOUN FABIAN', '2020-03768', 'PHARMACY', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'None', 'Admin', 'MANILA', '2022-06-21 05:34:45', '2022-06-21 05:35:19', 'Student', 'TLTD_MAIN'),
-(10000077, 'Academic,', 'Presentation/Lecture,', '11023351', '2022-06-22', '13:37', '14:37', 'DCT 201', 'BRET SIMOUN FABIAN', '2020-03723', 'PHARMACY', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'None', 'Admin', 'MANILA', '2022-06-21 05:37:39', '2022-06-21 05:38:21', 'Student', 'TLTD_MAIN'),
-(10000078, 'Academic,', 'Presentation/Lecture,', '11023351 11023397', '2022-06-23', '14:28', '16:28', 'DENT SCI 201', 'BRET SIMOUN FABIAN', '2020-03723', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'None', 'Admin', 'MANILA', '2022-06-21 06:29:19', '2022-06-21 06:35:34', 'Teaching', 'TLTD_MAIN'),
-(10000079, 'Academic,', 'Presentation/Lecture,', '11023352 11023397', '2022-06-23', '10:43', '12:43', 'PHL 301', 'BRET SIMOUN FABIAN', '2020-03723', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'fee 100', 'Admin', 'MANILA', '2022-06-21 06:43:38', '2022-06-21 14:31:31', 'Student', 'TLTD_MAIN');
+INSERT INTO `reservation` (`Res_id`, `nature`, `Purpose`, `Equipment`, `resDate`, `Time_Start`, `Time_End`, `Room_Venue`, `ReqName`, `SchoolID`, `School`, `Email`, `Status`, `Remarks`, `Checked_By`, `Released By`, `Recieved By`, `Date_Requested`, `Last_Update`, `User`, `Office`) VALUES
+(10000091, 'Academic,', 'Presentation/Lecture,', '11023352 11023397', '2022-07-08', '14:03', '16:03', 'SDV 301', 'Robert macho', '2020-03723', 'MEDICINE', 'Fabian@yahoo.com', 'PENDING', 'None', 'None', NULL, NULL, '2022-07-07 15:04:13', NULL, 'Student', 'TLTD_MAIN'),
+(10000090, 'Academic,', 'Presentation/Lecture,', '11023352 11023397', '2022-07-07', '14:58', '15:58', 'GDLSC 201', 'sfafasf', '2020-03768', 'PHARMACY', 'Fabian@yahoo.com', 'PENDING', 'None', 'None', NULL, NULL, '2022-07-07 14:58:28', NULL, 'Student', 'TLTD_MAIN'),
+(10000088, 'Academic,', 'Presentation/Lecture,', '11023351 11023397', '2022-06-24', '09:27', '16:21', 'LAH 201', 'BRET SIMOUN FABIAN', '200810000', 'SCITECH', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'late 2hr fee 200', 'Admin', 'testing', 'testing 2', '2022-06-23 07:23:05', '2022-06-23 07:33:13', 'Teaching', 'TLTD_MAIN'),
+(10000087, 'Academic,', 'Presentation/Lecture,', '11023351 11023397', '2022-06-25', '13:45', '14:45', 'GDLSC 301', 'BRET SIMOUN FABIAN', '2020-03723', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'late 100', 'Admin', 'tester 7', 'tester 9', '2022-06-23 05:45:50', '2022-06-23 05:49:07', 'Teaching', 'TLTD_MAIN'),
+(10000086, 'Academic,', 'Presentation/Lecture,', '11023392 11023353', '2022-06-22', '12:49', '15:49', 'DENT SCI 201', 'BRET SIMOUN FABIAN', '2020-03723', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'CANCELLED', 'Did not borrow equipment', 'Admin', NULL, NULL, '2022-06-22 16:50:12', '2022-06-22 16:50:51', 'Student', 'DENT_SCI'),
+(10000084, 'Academic,', 'Presentation/Lecture,', '11023352 11023397', '2022-06-30', '11:42', '13:42', 'LAH 301', 'BRET SIMOUN FABIAN', '2020-03768', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'COMPLETED', '', 'Admin', 'tester 3', 'tester 8', '2022-06-22 15:42:37', '2022-06-22 16:29:59', 'Student', 'TLTD_MAIN'),
+(10000085, 'Academic,', 'Presentation/Lecture,', '11023392 11023353', '2022-06-23', '11:43', '13:43', 'PHL 201', 'BRET SIMOUN FABIAN', '2020-03723', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'late fee 200', 'Admin', 'tester 4', 'tester 9', '2022-06-22 15:43:27', '2022-06-22 16:31:26', 'Teaching', 'DENT_SCI'),
+(10000083, 'Academic,', 'Presentation/Lecture,', '11023351 11023397', '2022-06-23', '11:41', '13:41', 'MVH 201', 'BRET SIMOUN FABIAN', '2020-03723', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'late fee 200', 'Admin', 'tester 4', 'tester 9', '2022-06-22 15:42:00', '2022-06-22 16:29:46', 'Student', 'TLTD_MAIN');
 
 -- --------------------------------------------------------
 
@@ -204,7 +197,7 @@ CREATE TABLE `tbl_equipment` (
 --
 
 INSERT INTO `tbl_equipment` (`Equip_ID`, `Tag`, `type`, `name`, `MODel`, `information`, `Stats`, `Office`, `Site`, `Purchase Date`, `Condemn Date`, `Checked_By`, `Last_Update`) VALUES
-(11023351, 'Laptop 1', 'Laptop', 'Samsung', '', 'Laptop with charger', 'Available', 'TLTD_MAIN', 'MANILA', NULL, NULL, NULL, NULL),
+(11023401, 'Laptop 1', 'Laptop', 'Samsung', '', 'Laptop with Charger', 'Available', 'TLTD_MAIN', 'MANILA', '2022-06-23', NULL, 'Admin', '2022-06-23 08:00:46'),
 (11023352, 'Laptop 2', 'Laptop', 'Samsung Ativ', '', 'Laptop with charger', 'Available', 'TLTD_MAIN', 'MANILA', NULL, NULL, NULL, NULL),
 (11023353, 'Overhead Projector 1', 'Overhead Projector', 'HP', '', 'Projector with power cord', 'Available', 'DENT_SCI', 'MANILA', NULL, NULL, NULL, NULL),
 (11023354, 'Microphone 1', 'Microphone', 'Magicsing', '', 'Microphone with audio jack', 'Available', 'TLTD_MAIN', 'MANILA', NULL, NULL, NULL, NULL),
@@ -250,7 +243,9 @@ INSERT INTO `tbl_equipment` (`Equip_ID`, `Tag`, `type`, `name`, `MODel`, `inform
 (11023395, 'ViewingRoom 2', 'ViewingRoom', 'theater room', '', 'film viewing room', 'Available', 'Dent_Sci', 'MANILA', '2022-06-12', NULL, NULL, NULL),
 (11023396, 'ViewingRoom 3', 'ViewingRoom', 'theater room', '', 'film viewing room', 'Available', 'LAH_sub_center', 'MANILA', '2022-05-29', NULL, NULL, NULL),
 (11023397, 'Overhead Projector 1', 'Overhead Projector', 'Toshiba', '', 'projector with power cord', 'Available', 'TLTD_MAIN', 'MANILA', '2012-10-09', NULL, 'Admin', '2022-06-09 06:29:39'),
-(11023398, 'Laptop 6', 'Laptop', 'HP', '', 'Laptop with charger', 'Available', 'LAH_sub_center', 'MANILA', '2022-06-16', NULL, 'Admin', '2022-06-16 06:44:14');
+(11023398, 'Laptop 6', 'Laptop', 'HP', '', 'Laptop with charger', 'Available', 'LAH_sub_center', 'MANILA', '2022-06-16', NULL, 'Admin', '2022-06-16 06:44:14'),
+(11023399, 'CDcassettePlayer 3', 'CDcassettePlayer ', 'Toshiba', 'tr22320', 'with cd', 'Available', 'LAH_sub_center', 'MANILA', '2022-06-02', NULL, 'Admin', '2022-06-22 16:55:41'),
+(11023400, 'DigitalCamera(still) 3', 'DigitalCamera(still) ', 'Kodak', 'wh3455', 'with cd', 'Available', 'LAH_sub_center', 'MANILA', '2022-06-01', NULL, 'Admin', '2022-06-22 17:00:29');
 
 -- --------------------------------------------------------
 
@@ -332,7 +327,7 @@ INSERT INTO `tltd_pass` (`track_id`, `Pass_ID`, `Resrv_ID`, `Eqi_tags`, `State`,
 (58, 58, 0, '', 'AVAILABLE', 'TLTD_MAIN'),
 (59, 59, 0, '', 'AVAILABLE', 'TLTD_MAIN'),
 (60, 60, 0, '', 'AVAILABLE', 'TLTD_MAIN'),
-(61, 1, 0, '', 'AVAILABLE', 'DENT_SCI'),
+(61, 1, 0, ' ', 'AVAILABLE', 'DENT_SCI'),
 (62, 2, 0, '', 'AVAILABLE', 'DENT_SCI'),
 (63, 3, 0, '', 'AVAILABLE', 'DENT_SCI'),
 (64, 4, 0, '', 'AVAILABLE', 'DENT_SCI'),
@@ -492,15 +487,11 @@ CREATE TABLE `utilization` (
 --
 
 INSERT INTO `utilization` (`U_ID`, `r_day`, `Officearea`, `Name`, `Department`, `Laptop`, `Overhead Projector`, `Microphone`, `DLP/LCDProjector`, `VHSplayer`, `SoundSystem`, `DVDplayer`, `VCDplayer`, `CDcassettePlayer`, `Karaoke`, `DocumentCamera`, `DigitalvideoCamera`, `DigitalCamera(still)`, `DocumentationVideos`, `EducationalVideos`, `Music`, `HDMIconnector`, `VGAconnector`, `LightningDigitalAVadapter`, `ViewingRoom`) VALUES
-(116, '2022-06-22', 'TLTD_MAIN', 'BRET SIMOUN FABIAN', 'PHARMACY', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', ''),
-(117, '2022-06-21', 'TLTD_MAIN', 'BRET SIMOUN FABIAN', 'GRADSCHOOL', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', ''),
-(118, '2022-06-18', 'TLTD_MAIN', 'BRET SIMOUN FABIAN', 'GRADSCHOOL', '1', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', ''),
-(119, '2022-06-17', 'TLTD_MAIN', 'BRET SIMOUN FABIAN', 'NHM', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', ''),
-(120, '2022-06-16', 'TLTD_MAIN', 'BRET SIMOUN FABIAN', 'GRADSCHOOL', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', ''),
-(121, '2022-06-12', 'TLTD_MAIN', 'Bret Simoun Fabian', 'GRADSCHOOL', '1', '1', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', ''),
-(122, '2022-06-21', 'TLTD_MAIN', 'Ronald bato', 'DENTISTRY', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '0', '', '', '', '', '', '', '', ''),
-(123, '2022-06-12', 'TLTD_MAIN', 'Robert macho', 'NURSING', '1', '1', '0', '1', '0', '1', '0', '0', '0', '0', '0', '0', '', '', '1', '', '', '', '', ''),
-(124, '2022-06-23', 'TLTD_MAIN', 'BRET SIMOUN FABIAN', 'GRADSCHOOL', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', '');
+(128, '2022-06-30', 'TLTD_MAIN', 'BRET SIMOUN FABIAN', 'GRADSCHOOL', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', ''),
+(129, '2022-06-23', 'TLTD_MAIN', 'BRET SIMOUN FABIAN', 'GRADSCHOOL', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', ''),
+(130, '2022-06-23', 'DENT_SCI', 'BRET SIMOUN FABIAN', 'GRADSCHOOL', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', ''),
+(131, '2022-06-25', 'TLTD_MAIN', 'BRET SIMOUN FABIAN', 'GRADSCHOOL', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', ''),
+(132, '2022-06-24', 'TLTD_MAIN', 'BRET SIMOUN FABIAN', 'SCITECH', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -550,7 +541,7 @@ ALTER TABLE `tltd_pass`
 --
 ALTER TABLE `utilization`
   ADD PRIMARY KEY (`U_ID`),
-  ADD UNIQUE KEY `r_day` (`r_day`,`Name`) USING HASH;
+  ADD UNIQUE KEY `r_day` (`r_day`,`Officearea`,`Name`) USING HASH;
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -578,13 +569,13 @@ ALTER TABLE `instructionalvideoeval`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `Res_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000080;
+  MODIFY `Res_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000092;
 
 --
 -- AUTO_INCREMENT for table `tbl_equipment`
 --
 ALTER TABLE `tbl_equipment`
-  MODIFY `Equip_ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11023399;
+  MODIFY `Equip_ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11023402;
 
 --
 -- AUTO_INCREMENT for table `tltd_pass`
@@ -596,7 +587,7 @@ ALTER TABLE `tltd_pass`
 -- AUTO_INCREMENT for table `utilization`
 --
 ALTER TABLE `utilization`
-  MODIFY `U_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+  MODIFY `U_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

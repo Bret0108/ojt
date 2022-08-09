@@ -68,15 +68,40 @@
                  <select name="pili">
                  <option  value="COMPLETE">COMPLETE</option>
                  <option  value="RESERVED">RESERVED</option>
+                 <option  value="ONGOING">ONGOING</option>
                  <option  value="CANCELLED">CANCELLED</option>
                  <option  value="PENDING">PENDING</option>
                  </select>
           </div>
 
            <div class="col-25">
+            <label for="fname">Office Location</label>
+          </div>
+            <div class="col-75">
+                 <select name="oFFice" id ="office">
+                 <option  value=" ">Select</option>
+                 <option  value="TLTD_MAIN">TLTD_MAIN</option>
+                 <option  value="DENT_SCI">DENT_SCI</option>
+                 <option  value="LAH_SUB_CENTER">LAH_SUB_CENTER</option>
+                </select>
+          </div>
+
+           <div class="col-25">
+            <label for="fname">Search By</label>
+          </div>
+            <div class="col-75">
+                 <select name="searchdate" id ="searchdate" onchange="resSearch()">
+                 <option  value=" ">Select</option>
+                 <option  value="MONTH">Month</option>
+                 <option  value="WEEK">Week</option>
+                 <option  value="DAY">Day</option>
+                </select>
+          </div>
+
+           <div class="col-25"  name="hidden-label1" id="hidden-label1">
             <label for="fname">Month</label>
           </div>
-          <div class="col-75">
+          <div class="col-75" name="hidden-panel1" id="hidden-panel1">
                  <select name="pili2">
                 <option  value=" ">Select</option>
                  <option  value="January">January</option>
@@ -94,19 +119,35 @@
                  </select>
           </div>
 
-          <div class="col-25">
+          <div class="col-25" name="hidden-label2" id="hidden-label2">
             <label for="subject">Year</label>
           </div>
-          <div class="col-75">
+          <div class="col-75" name="hidden-panel2" id="hidden-panel2">
             <input class="form-control" type="text" id="Year" value="" name="pili3"  placeholder="Year">
           </div>
 
-          <div class="col-25">
+          <div class="col-25" name="hidden-label3" id="hidden-label3">
             <label for="fname">Day</label>
           </div>
-          <div class="col-75">
-            <input class="form-control" type="date" id="nAmE" name="nma" placeholder=" ">
+          <div class="col-75" name="hidden-panel3" id="hidden-panel3">
+            <input class="form-control" type="date" id="nAmE" name="dte" placeholder=" ">
           </div>
+
+          <div class="col-25" name="hidden-label4" id="hidden-label4">
+            <label for="fname">From</label>
+          </div>
+          <div class="col-75" name="hidden-panel4" id="hidden-panel4">
+            <input class="form-control" type="date" id="frm" name="frm" placeholder="From">
+          </div>
+
+          <div class="col-25" name="hidden-label5" id="hidden-label5">
+            <label for="fname">To</label>
+          </div>
+          <div class="col-75" name="hidden-panel5" id="hidden-panel5">
+            <input class="form-control" type="date" id="to" name="to" placeholder="To">
+          </div>
+
+
 
            <div class="col-25">
             <label for="subject">Name</label>
@@ -134,9 +175,11 @@
                   <tr>
                       <th class="tHead">Status</th>
                       <th class="tHead">Remarks</th>
-                       <th class="tHead">Reservation ID</th>
+                      <th class="tHead">Last Update</th>
+                      <th class="tHead">Released by</th>
+                      <th class="tHead">Recieved by</th>
+                      <th class="tHead">Reservation ID</th>
                       <th class="tHead">Equipment</th>
-                      <th class="tHead">Date Requested</th>
                       <th class="tHead">User</th>
                       <th class="tHead">Office</th>
                       <th class="tHead">Reservation Date</th>
@@ -149,7 +192,7 @@
                       <th class="tHead">Room/Venue</th>
                       <th class="tHead">Nature</th>
                       <th class="tHead">Purpose</th>
-                      <th class="tHead">Campus</th>
+                     
                   <tbody>
                       <?php include('PHP/Admin/Reservation_viewer.php');?>
 

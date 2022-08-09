@@ -33,6 +33,59 @@ function VidTitle() {
     }
 }
 
+function resSearch() {
+    let searchdate = document.getElementById('searchdate')
+
+    if (searchdate.value == "MONTH") {
+        document.getElementById('hidden-panel2').style.display = 'block'
+         document.getElementById('hidden-label2').style.display = 'block'
+         document.getElementById('hidden-label1').style.display = 'block'
+        document.getElementById('hidden-panel1').style.display = 'block'
+         document.getElementById('hidden-label3').style.display = 'none'
+        document.getElementById('hidden-panel3').style.display = 'none'
+        document.getElementById('hidden-label4').style.display = 'none'
+        document.getElementById('hidden-panel4').style.display = 'none'
+         document.getElementById('hidden-label5').style.display = 'none'
+        document.getElementById('hidden-panel5').style.display = 'none'
+    }
+    else if (searchdate.value == "WEEK") {
+         document.getElementById('hidden-label4').style.display = 'block'
+        document.getElementById('hidden-panel4').style.display = 'block'
+         document.getElementById('hidden-label5').style.display = 'block'
+        document.getElementById('hidden-panel5').style.display = 'block'
+          document.getElementById('hidden-label1').style.display = 'none'
+        document.getElementById('hidden-panel1').style.display = 'none'
+        document.getElementById('hidden-label2').style.display = 'none'
+        document.getElementById('hidden-panel2').style.display = 'none'
+         document.getElementById('hidden-label3').style.display = 'none'
+        document.getElementById('hidden-panel3').style.display = 'none'
+    } 
+    else if(searchdate.value == "DAY") {
+        document.getElementById('hidden-label3').style.display = 'block'
+        document.getElementById('hidden-panel3').style.display = 'block'
+        document.getElementById('hidden-label1').style.display = 'none'
+        document.getElementById('hidden-panel1').style.display = 'none'
+          document.getElementById('hidden-label2').style.display = 'none'
+        document.getElementById('hidden-panel2').style.display = 'none'
+        document.getElementById('hidden-label4').style.display = 'none'
+        document.getElementById('hidden-panel4').style.display = 'none'
+         document.getElementById('hidden-label5').style.display = 'none'
+        document.getElementById('hidden-panel5').style.display = 'none'
+    }
+    else{
+          document.getElementById('hidden-label1').style.display = 'none'
+        document.getElementById('hidden-panel1').style.display = 'none'
+          document.getElementById('hidden-label2').style.display = 'none'
+        document.getElementById('hidden-panel2').style.display = 'none'
+         document.getElementById('hidden-label3').style.display = 'none'
+        document.getElementById('hidden-panel3').style.display = 'none'
+        document.getElementById('hidden-label4').style.display = 'none'
+        document.getElementById('hidden-panel4').style.display = 'none'
+         document.getElementById('hidden-label5').style.display = 'none'
+        document.getElementById('hidden-panel5').style.display = 'none'
+    }
+}
+
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];

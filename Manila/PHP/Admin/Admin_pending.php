@@ -19,7 +19,7 @@ include('../Connection/Connection.php');
 						<tr>
 							<td>
 								<a class='btn btn-success' href='Admin_home.php? name="<?= $row['Res_id'];?>"'>Confirm</a>
-						    	<a class='btn btn-danger' Style=" Width:100px"  href='Admin_home.php? id="<?= $row['Res_id'];?>"'>Cancel</a>
+						    	<a class='btn btn-danger' Style=" Width:100px; margin-top:10px;"  href='Admin_home.php? id="<?= $row['Res_id'];?>"'>Cancel</a>
 						    </td>
 							<td class="Tracking">
 								<a id="myBtn" onclick="TnC()"><?= $row['Res_id'];?></a>
