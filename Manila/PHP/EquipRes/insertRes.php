@@ -28,12 +28,17 @@ if(isset($_POST['sub']))
 		$uSer = $_SESSION['user'];
 
 
-		$chk= "SELECT * FROM reservation Where `resDate` = '$resDate' AND `Status` = 'Reserved'";
+		$chk= "SELECT * FROM reservation Where `resDate` = '$resDate' AND `Status` = 'RESERVED'";
 		$dchk = mysqli_query($con, $chk);
 		$user = mysqli_fetch_assoc($dchk);
 		$sample=$user['Equipment'];
 		$st=str_split($sample,9);
-		
+
+
+		$echk = "SELECT COUNT(Email) FROM `reservation` WHERE Email = '$Email' AND resDate = '$resDate' AND `Status` = 'PENDING'";
+		$echk1 = mysqli_query($con, $echk);
+		$emailcount = mysqli_fetch_assoc($echk1);
+
 		//echo $user['Res_id'];
 		//echo $c;
 
@@ -128,11 +133,27 @@ if(isset($_POST['sub']))
 			<?PHP		
 		}
 
+
+
+		else if($emailcount = 3){
+				?>
+			<div class="alert alert-primary d-flex align-items-center" role="alert" style = "margin-bottom:0px;">
+					  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+					    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+					  </svg>&nbsp;&nbsp;
+					  <div>
+					  	Reservation did not push through email used has multiple pending reservation on the same reservation date
+					  </div>
+					</div>
+			<?PHP		
+
+		}
+
 		else{
 			date_default_timezone_set('Asia/Manila');
 			$t=date('h:i A');
 
-			if($t < date('06:00 PM') OR $t > date('07:00 AM')){
+			if($t < date('06:00 PM') AND $t > date('07:00 AM')){
 				if($School == "OTHERS"){
 					if($RoomVenue != "OTHERS"){
 				$qry="INSERT INTO reservation(`nature`,`Purpose`,`Equipment`,`resDate`,`Time_Start`,`Time_End`,`Room_Venue`,`ReqName`,`SchoolID`,`School`,`Email`,`User`,`Office`) VALUES('$a','$b','$c','$resDate','$TimeStart','$TimeEnd','$RoomVenue $roomNo','$ReqName','$SchoolID','$others','$Email','$uSer','$offiCe')";

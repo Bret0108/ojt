@@ -30,7 +30,14 @@ if (isset($_GET['code'])) {
   $_SESSION['emaIl'] = $email;
   $_SESSION['name'] = $name;
 
-  header('location: Manila/UserCheck.php');
+  if (preg_match('|@ceu.edu.ph$|', $email))
+{
+     header('location: Manila/UserCheck.php');
+}
+  else{
+    header('location: redirect.php');
+  }
+
   
   //echo $name;
 

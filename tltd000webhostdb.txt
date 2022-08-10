@@ -1,0 +1,11 @@
+<?php
+$host="localhost";//host name  
+$username="id19396036_tltdmanila"; //database username  
+$word="d4Y?v]w-(?PHZn!V";//database word  
+$db_name="id19396036_tltd";//database name  
+$tbl_name="reservation"; //table name  
+$con=mysqli_connect("$host", "$username", "$word","$db_name")or die("cannot connect");  
+
+?>
+
+d4Y?v]w-(?PHZn!V

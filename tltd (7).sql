@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 09, 2022 at 05:41 PM
+-- Generation Time: Aug 10, 2022 at 04:21 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -161,6 +161,9 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`Res_id`, `nature`, `Purpose`, `Equipment`, `resDate`, `Time_Start`, `Time_End`, `Room_Venue`, `ReqName`, `SchoolID`, `School`, `Email`, `Status`, `Remarks`, `Checked_By`, `Released By`, `Recieved By`, `Date_Requested`, `Last_Update`, `User`, `Office`) VALUES
+(10000094, 'Academic,', 'Presentation/Lecture,', '11023401', '2022-08-11', '14:10', '15:10', 'LAH 201', 'BRET SIMOUN FABIAN', '201213', 'MEDICINE', 'fabian1103724@ceu.edu.ph', 'PENDING', 'None', 'None', NULL, NULL, '2022-08-10 14:10:11', NULL, 'Student', 'TLTD_MAIN'),
+(10000093, 'Academic,', 'Presentation/Lecture,', '11023401', '2022-08-11', '12:10', '13:10', 'PHL 201', 'BRET SIMOUN FABIAN', '2020-03723', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'PENDING', 'None', 'None', NULL, NULL, '2022-08-10 14:08:39', NULL, 'Student', 'TLTD_MAIN'),
+(10000092, 'Academic,', 'Presentation/Lecture,', '11023401', '2022-08-11', '10:07', '11:07', 'CDL 201', 'BRET SIMOUN FABIAN', '2012123123', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'PENDING', 'None', 'None', NULL, NULL, '2022-08-10 14:07:42', NULL, 'Student', 'TLTD_MAIN'),
 (10000091, 'Academic,', 'Presentation/Lecture,', '11023352 11023397', '2022-07-08', '14:03', '16:03', 'SDV 301', 'Robert macho', '2020-03723', 'MEDICINE', 'Fabian@yahoo.com', 'PENDING', 'None', 'None', NULL, NULL, '2022-07-07 15:04:13', NULL, 'Student', 'TLTD_MAIN'),
 (10000090, 'Academic,', 'Presentation/Lecture,', '11023352 11023397', '2022-07-07', '14:58', '15:58', 'GDLSC 201', 'sfafasf', '2020-03768', 'PHARMACY', 'Fabian@yahoo.com', 'PENDING', 'None', 'None', NULL, NULL, '2022-07-07 14:58:28', NULL, 'Student', 'TLTD_MAIN'),
 (10000088, 'Academic,', 'Presentation/Lecture,', '11023351 11023397', '2022-06-24', '09:27', '16:21', 'LAH 201', 'BRET SIMOUN FABIAN', '200810000', 'SCITECH', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'late 2hr fee 200', 'Admin', 'testing', 'testing 2', '2022-06-23 07:23:05', '2022-06-23 07:33:13', 'Teaching', 'TLTD_MAIN'),
@@ -569,7 +572,7 @@ ALTER TABLE `instructionalvideoeval`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `Res_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000092;
+  MODIFY `Res_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000096;
 
 --
 -- AUTO_INCREMENT for table `tbl_equipment`
