@@ -5,7 +5,7 @@ require_once 'vendor/vendor/autoload.php';
 // init configuration
 $clientID = '198048098578-hdj027cdtia9dqhptjiscif3280nedhh.apps.googleusercontent.com';
 $clientSecret = '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';
-$redirectUri = 'http://localhost/OJT/redirect.php';
+$redirectUri = 'https://localhost/OJT/redirect.php';
    
 //Update June 14 2022 created google login auth settings//
 // create Client Request to access Google API
