@@ -135,7 +135,7 @@ if(isset($_POST['sub']))
 
 
 
-		else if($emailcount = 3){
+		else if($emailcount == 3){
 				?>
 			<div class="alert alert-primary d-flex align-items-center" role="alert" style = "margin-bottom:0px;">
 					  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
@@ -153,7 +153,7 @@ if(isset($_POST['sub']))
 			date_default_timezone_set('Asia/Manila');
 			$t=date('h:i A');
 
-			if($t < date('06:00 PM') AND $t > date('07:00 AM')){
+			if($t >= date('07:00 AM') OR $t <= date('06:00 PM')){
 				if($School == "OTHERS"){
 					if($RoomVenue != "OTHERS"){
 				$qry="INSERT INTO reservation(`nature`,`Purpose`,`Equipment`,`resDate`,`Time_Start`,`Time_End`,`Room_Venue`,`ReqName`,`SchoolID`,`School`,`Email`,`User`,`Office`) VALUES('$a','$b','$c','$resDate','$TimeStart','$TimeEnd','$RoomVenue $roomNo','$ReqName','$SchoolID','$others','$Email','$uSer','$offiCe')";
@@ -179,7 +179,7 @@ if(isset($_POST['sub']))
 					}
 				}
 			}
-			else if($t > date('06:00 PM') OR $t < date('07:00 AM')){
+			else if($t > date('06:00 PM') AND  $t < date('07:00 AM')){
 
 			?>
 			<div class="alert alert-primary d-flex align-items-center" role="alert" style = "margin-bottom:0px;">
