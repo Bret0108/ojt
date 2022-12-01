@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 10, 2022 at 04:21 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 7.3.27
+-- Generation Time: Dec 01, 2022 at 03:29 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,9 +42,7 @@ CREATE TABLE `admin_login` (
 --
 
 INSERT INTO `admin_login` (`Admin_ID`, `Username`, `Password`, `Access`, `Root`, `Name`, `Email`) VALUES
-(23341267, 'Admin', '$2y$10$LsGuKUUZ.Gl0.y5H4HcpYeopS6e0pEvPhN5fIpu8xpmxnjC6BP7ve', 'Manila', 'YES', '', ''),
-(23341270, 'Testing sub', '$2y$10$1x4.USHn0e4t2ZqYvM8hfelaXU4L.mvCSioVqx.ogFNYZAL8/aAKy', 'Manila', 'NO', 'Baby kamote', 'BabyK@ceu.edu.ph'),
-(23341278, 'Bret123', '$2y$10$fW9JM9t1PZQHcI4PQ7mBLuoE7pw5QOye70vAFjHZsk3w2iWs0zC/a', 'None', 'NO', 'Bret Simoun Fabian', 'Email@email.com');
+(23341287, 'Admin', '$2y$10$le6p.MQij6E.nAbJhjbaGeSwSu5wM7WY/fPeKsU7fMyHLnhkYBVrC', 'None', 'YES', 'root', 'root');
 
 -- --------------------------------------------------------
 
@@ -88,7 +86,8 @@ CREATE TABLE `equipmentrepairrequest` (
 
 INSERT INTO `equipmentrepairrequest` (`Repair_ID`, `DescEquip`, `Model`, `SerialNo`, `DescEquipNo`, `Complaint`, `ReportName`, `ReportDept`, `ActionTaken`, `Repaired`, `InhouseRemarks`, `InhouseName`, `InhouseSig`, `InhouseDateTime`, `OutsideName`, `OutsideServicecntr`, `OutsideDateout`, `OutsideReturn`, `OutsideORno`, `AttestName`, `AttestSig`, `AttestDateTime`, `ApprovName`, `ApprovSig`, `BuildiNG`, `ROoM`, `MDate`) VALUES
 (3, 'Laptop', 'Samsung', '31231535032', 'Laptop1', 'charger is broken', 'bret simoun fabian', 'NURSING,', 'In-house', 'Repaired', 'loose cable', 'baby boy bawang', 'signature (1).png', '2022/06/15', '', '', '', '', '', 'test', 'signature (2).png', '2022/06/16', 'testgo', 'signature.png', 'GDLSC', '201', '2022-06-15'),
-(4, 'Laptop', 'Samsung', '325023502520', 'Laptop2', 'noise complaint', 'Sinigang na champorado', 'PHARMACY,', 'Outside', ' ', '', '', '', '', 'saging na saba', 'marikina river', '2022-06-16', '2022-06-16', '325002350250', '', '', '', '', '', 'MVH', '302', '2022-06-16');
+(4, 'Laptop', 'Samsung', '325023502520', 'Laptop2', 'noise complaint', 'Sinigang na champorado', 'PHARMACY,', 'Outside', ' ', '', '', '', '', 'saging na saba', 'marikina river', '2022-06-16', '2022-06-16', '325002350250', '', '', '', '', '', 'MVH', '302', '2022-06-16'),
+(6, 'Laptop', 'toshihi', '3423423423', '0912324242', 'broken charger', 'bret', 'SELAMS,', 'In-house', 'Repaired', 'repaired', 'bret', 'signature.png', '2022/11/24', '', '', '', '', '', 'sir junjun', 'signature.png', '2022/11/25', 'sir jotic', 'signature.png', 'PHL', '302', '2022-11-24');
 
 -- --------------------------------------------------------
 
@@ -161,17 +160,22 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`Res_id`, `nature`, `Purpose`, `Equipment`, `resDate`, `Time_Start`, `Time_End`, `Room_Venue`, `ReqName`, `SchoolID`, `School`, `Email`, `Status`, `Remarks`, `Checked_By`, `Released By`, `Recieved By`, `Date_Requested`, `Last_Update`, `User`, `Office`) VALUES
-(10000094, 'Academic,', 'Presentation/Lecture,', '11023401', '2022-08-11', '14:10', '15:10', 'LAH 201', 'BRET SIMOUN FABIAN', '201213', 'MEDICINE', 'fabian1103724@ceu.edu.ph', 'PENDING', 'None', 'None', NULL, NULL, '2022-08-10 14:10:11', NULL, 'Student', 'TLTD_MAIN'),
-(10000093, 'Academic,', 'Presentation/Lecture,', '11023401', '2022-08-11', '12:10', '13:10', 'PHL 201', 'BRET SIMOUN FABIAN', '2020-03723', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'PENDING', 'None', 'None', NULL, NULL, '2022-08-10 14:08:39', NULL, 'Student', 'TLTD_MAIN'),
-(10000092, 'Academic,', 'Presentation/Lecture,', '11023401', '2022-08-11', '10:07', '11:07', 'CDL 201', 'BRET SIMOUN FABIAN', '2012123123', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'PENDING', 'None', 'None', NULL, NULL, '2022-08-10 14:07:42', NULL, 'Student', 'TLTD_MAIN'),
-(10000091, 'Academic,', 'Presentation/Lecture,', '11023352 11023397', '2022-07-08', '14:03', '16:03', 'SDV 301', 'Robert macho', '2020-03723', 'MEDICINE', 'Fabian@yahoo.com', 'PENDING', 'None', 'None', NULL, NULL, '2022-07-07 15:04:13', NULL, 'Student', 'TLTD_MAIN'),
-(10000090, 'Academic,', 'Presentation/Lecture,', '11023352 11023397', '2022-07-07', '14:58', '15:58', 'GDLSC 201', 'sfafasf', '2020-03768', 'PHARMACY', 'Fabian@yahoo.com', 'PENDING', 'None', 'None', NULL, NULL, '2022-07-07 14:58:28', NULL, 'Student', 'TLTD_MAIN'),
+(10000094, 'Academic,', 'Presentation/Lecture,', '11023401', '2022-08-11', '14:10', '15:10', 'LAH 201', 'BRET SIMOUN FABIAN', '201213', 'MEDICINE', 'fabian1103724@ceu.edu.ph', 'CANCELLED', 'None', 'bret', NULL, NULL, '2022-08-10 14:10:11', '2022-11-22 06:16:38', 'Student', 'TLTD_MAIN'),
+(10000093, 'Academic,', 'Presentation/Lecture,', '11023401', '2022-08-11', '12:10', '13:10', 'PHL 201', 'BRET SIMOUN FABIAN', '2020-03723', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'CANCELLED', 'None', 'bret', NULL, NULL, '2022-08-10 14:08:39', '2022-11-22 06:16:42', 'Student', 'TLTD_MAIN'),
+(10000092, 'Academic,', 'Presentation/Lecture,', '11023401', '2022-08-11', '10:07', '11:07', 'CDL 201', 'BRET SIMOUN FABIAN', '2012123123', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'CANCELLED', 'None', 'bret', NULL, NULL, '2022-08-10 14:07:42', '2022-11-22 06:16:44', 'Student', 'TLTD_MAIN'),
+(10000091, 'Academic,', 'Presentation/Lecture,', '11023352 11023397', '2022-07-08', '14:03', '16:03', 'SDV 301', 'Robert macho', '2020-03723', 'MEDICINE', 'Fabian@yahoo.com', 'CANCELLED', 'None', 'bret', NULL, NULL, '2022-07-07 15:04:13', '2022-11-22 06:16:46', 'Student', 'TLTD_MAIN'),
+(10000090, 'Academic,', 'Presentation/Lecture,', '11023352 11023397', '2022-07-07', '14:58', '15:58', 'GDLSC 201', 'sfafasf', '2020-03768', 'PHARMACY', 'Fabian@yahoo.com', 'CANCELLED', 'None', 'bret', NULL, NULL, '2022-07-07 14:58:28', '2022-11-22 06:16:48', 'Student', 'TLTD_MAIN'),
 (10000088, 'Academic,', 'Presentation/Lecture,', '11023351 11023397', '2022-06-24', '09:27', '16:21', 'LAH 201', 'BRET SIMOUN FABIAN', '200810000', 'SCITECH', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'late 2hr fee 200', 'Admin', 'testing', 'testing 2', '2022-06-23 07:23:05', '2022-06-23 07:33:13', 'Teaching', 'TLTD_MAIN'),
 (10000087, 'Academic,', 'Presentation/Lecture,', '11023351 11023397', '2022-06-25', '13:45', '14:45', 'GDLSC 301', 'BRET SIMOUN FABIAN', '2020-03723', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'late 100', 'Admin', 'tester 7', 'tester 9', '2022-06-23 05:45:50', '2022-06-23 05:49:07', 'Teaching', 'TLTD_MAIN'),
 (10000086, 'Academic,', 'Presentation/Lecture,', '11023392 11023353', '2022-06-22', '12:49', '15:49', 'DENT SCI 201', 'BRET SIMOUN FABIAN', '2020-03723', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'CANCELLED', 'Did not borrow equipment', 'Admin', NULL, NULL, '2022-06-22 16:50:12', '2022-06-22 16:50:51', 'Student', 'DENT_SCI'),
 (10000084, 'Academic,', 'Presentation/Lecture,', '11023352 11023397', '2022-06-30', '11:42', '13:42', 'LAH 301', 'BRET SIMOUN FABIAN', '2020-03768', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'COMPLETED', '', 'Admin', 'tester 3', 'tester 8', '2022-06-22 15:42:37', '2022-06-22 16:29:59', 'Student', 'TLTD_MAIN'),
 (10000085, 'Academic,', 'Presentation/Lecture,', '11023392 11023353', '2022-06-23', '11:43', '13:43', 'PHL 201', 'BRET SIMOUN FABIAN', '2020-03723', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'late fee 200', 'Admin', 'tester 4', 'tester 9', '2022-06-22 15:43:27', '2022-06-22 16:31:26', 'Teaching', 'DENT_SCI'),
-(10000083, 'Academic,', 'Presentation/Lecture,', '11023351 11023397', '2022-06-23', '11:41', '13:41', 'MVH 201', 'BRET SIMOUN FABIAN', '2020-03723', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'late fee 200', 'Admin', 'tester 4', 'tester 9', '2022-06-22 15:42:00', '2022-06-22 16:29:46', 'Student', 'TLTD_MAIN');
+(10000083, 'Academic,', 'Presentation/Lecture,', '11023351 11023397', '2022-06-23', '11:41', '13:41', 'MVH 201', 'BRET SIMOUN FABIAN', '2020-03723', 'GRADSCHOOL', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'late fee 200', 'Admin', 'tester 4', 'tester 9', '2022-06-22 15:42:00', '2022-06-22 16:29:46', 'Student', 'TLTD_MAIN'),
+(10000096, 'Academic,Co-curricular/Extra-curricular,', 'Presentation/Lecture,', '11023352 11023397', '2022-11-23', '13:15', '15:15', 'CDD 201', 'BRET SIMOUN FABIAN', '2022-22122', 'DENTISTRY', 'fabian1103724@ceu.edu.ph', 'COMPLETED', 'none', 'bret', 'bret', 'gerry', '2022-11-22 06:16:05', '2022-11-23 06:46:00', 'Student', 'TLTD_MAIN'),
+(10000097, 'Academic,', 'Presentation/Lecture,', '11023401 11023397', '2022-11-24', '14:26', '15:26', 'MVH 501', 'Bret Simoun Fabian', '2022-1103724', 'MEDICINE', 'blfabian@ceu.edu.ph', 'COMPLETED', 'none', 'bret', 'lando', 'jillian', '2022-11-23 06:26:50', '2022-11-23 06:46:36', 'Student', 'TLTD_MAIN'),
+(10000098, 'Academic,', 'Presentation/Lecture,', '11023401 11023397', '2022-11-17', '13:53', '15:53', 'DCT 501', 'Bret Simoun Fabian', '2022-1103724', 'PHARMACY', 'blfabian@ceu.edu.ph', 'COMPLETED', 'late 200', 'bret', 'lando', 'gerry', '2022-11-25 08:53:58', '2022-11-25 08:56:49', 'Student', 'TLTD_MAIN'),
+(10000099, 'Academic,', 'Presentation/Lecture,', '11023352 11023397', '2022-11-29', '15:16', '16:16', 'GDLSC 501', 'Bret Simoun Fabian', '2022-1103724', 'NURSING', 'blfabian@ceu.edu.ph', 'RESERVED', 'None', 'bret', NULL, NULL, '2022-11-28 06:16:19', '2022-11-28 06:46:30', 'Student', 'TLTD_MAIN'),
+(10000100, 'Academic,', 'Presentation/Lecture,', '11023401 11023397 11023364', '2022-11-29', '14:16', '17:16', 'DCT 201', 'Bret Simoun Fabian', '2022-1103724', 'GRADSCHOOL', 'blfabian@ceu.edu.ph', 'PENDING', 'None', 'None', NULL, NULL, '2022-11-28 06:16:56', NULL, 'Student', 'TLTD_MAIN');
 
 -- --------------------------------------------------------
 
@@ -494,7 +498,10 @@ INSERT INTO `utilization` (`U_ID`, `r_day`, `Officearea`, `Name`, `Department`, 
 (129, '2022-06-23', 'TLTD_MAIN', 'BRET SIMOUN FABIAN', 'GRADSCHOOL', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', ''),
 (130, '2022-06-23', 'DENT_SCI', 'BRET SIMOUN FABIAN', 'GRADSCHOOL', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', ''),
 (131, '2022-06-25', 'TLTD_MAIN', 'BRET SIMOUN FABIAN', 'GRADSCHOOL', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', ''),
-(132, '2022-06-24', 'TLTD_MAIN', 'BRET SIMOUN FABIAN', 'SCITECH', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', '');
+(132, '2022-06-24', 'TLTD_MAIN', 'BRET SIMOUN FABIAN', 'SCITECH', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', ''),
+(133, '2022-11-24', 'TLTD_MAIN', 'Bret Simoun Fabian', 'MEDICINE', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', ''),
+(134, '2022-11-23', 'TLTD_MAIN', 'BRET SIMOUN FABIAN', 'DENTISTRY', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', ''),
+(135, '2022-11-17', 'TLTD_MAIN', 'Bret Simoun Fabian', 'PHARMACY', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -554,13 +561,13 @@ ALTER TABLE `utilization`
 -- AUTO_INCREMENT for table `admin_login`
 --
 ALTER TABLE `admin_login`
-  MODIFY `Admin_ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23341284;
+  MODIFY `Admin_ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23341288;
 
 --
 -- AUTO_INCREMENT for table `equipmentrepairrequest`
 --
 ALTER TABLE `equipmentrepairrequest`
-  MODIFY `Repair_ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Repair_ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `instructionalvideoeval`
@@ -572,7 +579,7 @@ ALTER TABLE `instructionalvideoeval`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `Res_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000096;
+  MODIFY `Res_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000101;
 
 --
 -- AUTO_INCREMENT for table `tbl_equipment`
@@ -590,7 +597,7 @@ ALTER TABLE `tltd_pass`
 -- AUTO_INCREMENT for table `utilization`
 --
 ALTER TABLE `utilization`
-  MODIFY `U_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+  MODIFY `U_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

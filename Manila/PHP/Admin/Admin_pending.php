@@ -5,7 +5,7 @@ error_reporting(0); //comment this to see warnings and notice
 include('../Connection/Connection.php');
 
 
-		$qry= "SELECT * from `reservation` WHERE `Status` = 'PENDING' LIMIT 10";
+		$qry= "SELECT * from `reservation` WHERE `Status` = 'PENDING' LIMIT 1";
 		$run = mysqli_query($con, $qry);
 
 			if(mysqli_num_rows($run) > 0){

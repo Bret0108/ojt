@@ -4,7 +4,6 @@ session_start();
 //Updated June 3 2022 Added purchase condem date office column, added search parameter office//
 //Updated June 9 2022 Added Category option//
 //Updated June 16 2022 change query search parameters, added model variable//
-error_reporting (E_ALL ^ E_NOTICE);
 include('../Connection/Connection.php');
 
 

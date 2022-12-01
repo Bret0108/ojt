@@ -1,5 +1,4 @@
 <?PHP
-error_reporting (E_ALL ^ E_NOTICE);
 include('../Connection/Connection.php');
 $qry= "SELECT * FROM `admin_login`";
 $run = mysqli_query($con, $qry);
