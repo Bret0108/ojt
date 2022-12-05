@@ -180,7 +180,18 @@
             <label for="fname">Type</label>
           </div>
           <div class="col-75">
-                 <input class="form-control" type="text" id="Iny" name="type" value="<?=$updt['type'];?>" placeholder="">
+                  <select class="form-control" name="type">
+                    <?php $sql = "SELECT type FROM `tbl_equipment` GROUP BY `type`";
+                    $all_categories = mysqli_query($con,$sql); 
+                    while ($category = mysqli_fetch_array(
+                            $all_categories,MYSQLI_ASSOC)):; 
+                    ?>
+                    <option value="<?=$category['type'];?>"><?=$category['type'];?>
+                    </option>
+                      <?php 
+                          endwhile; 
+                      ?>
+                 </select>
           </div>
         </div>
         <div class="row">
