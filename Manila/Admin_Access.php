@@ -70,7 +70,7 @@
                       <th class="tHead">Name</th>
                       <th class="tHead">Email</th>
                   <tbody>
-                      <?php include('PHP/Admin/Admin_list.php');?>
+                      <?php include('PHP/Admin/Admin_List.php');?>
 
                   </tbody>
                   </tr>
