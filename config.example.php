@@ -18,7 +18,7 @@ $SMTPAuth   = TRUE;
 $SMTPSecure = "tls";
 $Port       = 587;
 $Host       = "smtp.gmail.com";
-$Username   = base64_decode('ZmFiaWFuMTEwMzcyNEBjZXUuZWR1LnBo');
-$Password   = base64_decode('RHVkZWtvMDEwOA==');
+$yes   = base64_decode('ZmFiaWFuMTEwMzcyNEBjZXUuZWR1LnBo');
+$No   = base64_decode('RHVkZWtvMDEwOA==');
 
 ?>

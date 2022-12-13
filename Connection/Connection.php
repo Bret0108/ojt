@@ -8,5 +8,5 @@ $SMTPAuth   = $SMTPAuth;
 $SMTPSecure = $SMTPSecure;
 $Port       = $Port;
 $Host       = $Host;
-$Username   = $Username;
-$Password   = $Password;
+$Up   = $yes;
+$Down   = $No;

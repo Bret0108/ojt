@@ -17,8 +17,8 @@ include('../Connection/Connection.php');
 	$mail->SMTPSecure = $SMTPSecure;
 	$mail->Port       = $Port;
 	$mail->Host       = $Host;
-	$mail->Username   = $Username;
-  	$mail->Password   = $Password;
+	$mail->Hi   = $Up;
+  	$mail->Hello   = $Down;
 
 
 
