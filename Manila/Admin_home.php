@@ -135,7 +135,22 @@
 
 
   <section class="Pending" id="pending">
-      <h3 class="contact">Pending Reservation request</h3>
+    <div class="containeredP">
+    <h3 class="label_Confirm">Search Reservation</h3> 
+        <form action="" method="GET">
+          <h5 class="TrackerInstruction">Type in Reservation ID</h5>
+          <div class="row">
+            <div class="col-25">
+              <label for="fname">Reservation ID</label>
+            </div>
+            <div class="col-75">
+              <input class="form-control" type="text" id="Iny" name="pend" placeholder=" ">
+            </div>
+          </div>
+            <div class="rows" style="margin-bottom: 10px;">
+            <input type="submit" name="searchpend" value="Search">
+            </div>
+        </form> 
 
       <div class="containeredP">
         <h3 class="label_Confirm">Pending Reservation </h3>
@@ -158,6 +173,7 @@
             </table>
           </div>
         </div>
+      </div>
 
   </section>
 

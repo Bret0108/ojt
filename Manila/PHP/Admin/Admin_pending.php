@@ -4,8 +4,12 @@ error_reporting(0); //comment this to see warnings and notice
 
 include('../Connection/Connection.php');
 
+if(isset($_GET['searchpend'])){
 
-		$qry= "SELECT * from `reservation` WHERE `Status` = 'PENDING' LIMIT 1";
+		$Pending = $_GET['pend'];
+
+
+		$qry= "SELECT * from `reservation` WHERE `Status` = 'PENDING' AND `Res_id` = '$Pending' ";
 		$run = mysqli_query($con, $qry);
 
 			if(mysqli_num_rows($run) > 0){
@@ -65,4 +69,6 @@ include('../Connection/Connection.php');
 					<?php	
 				}
 			}
+
+}
 ?>

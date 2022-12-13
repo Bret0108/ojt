@@ -66,7 +66,7 @@
             </table>
         </div>
         <div Style = "color: white; background-color: green; margin-left: 400px; margin-right:400px; margin-bottom:20px; margin-top:20px">
-        <?php include('PHP/EquipRes/Confirm_Res.php'); ?>
+        <?php include('PHP/EquipRes/Bypass_ConfirmRes.php'); ?>
       </div>
     <div id="cons">
     <a class='btn btn-danger'  href='Bypass_Reservation.php? id="<?= $row['Res_id'];?>"'>Cancel</a>

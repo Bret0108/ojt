@@ -1,5 +1,57 @@
 <?php
 include('../Connection/Connection.php');
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require '../PHPMailer-master/src/Exception.php';
+require '../PHPMailer-master/src/PHPMailer.php';
+require '../PHPMailer-master/src/SMTP.php';
+
+  $mail = new PHPMailer();
+  $mail->IsSMTP();
+
+
+  
+  $mail->IsHTML(true);
+  $mail->SMTPDebug  = $SMTPDebug; 
+  $mail->SMTPAuth   = $SMTPAuth;
+  $mail->SMTPSecure = $SMTPSecure;
+  $mail->Port       = $Port;
+  $mail->Host       = $Host;
+  $mail->Username   = $Username;
+  $mail->Password   = $Password;
+
+
+
+	$Res_Code = $row['Res_id'];
+	$Res_name = $row['ReqName'];
+	$Res_date = $row['resDate'];
+	$T_start  = $row['Time_Start'];
+	$T_end    = $row['Time_End'];
+
+
+$mail->AddAddress($row['Email'], $row['ReqName']);
+$mail->SetFrom("fabian1103724@ceu.edu.ph", "TLTD Reservation Automated message do not reply");
+$mail->AddReplyTo($row['Email'], $row['ReqName']);
+$mail->AddCC("fabian1103724@ceu.edu.ph", "TLTD Reservation Automated message do not reply");
+$mail->Subject = "TLTD Reservation Confirmation Email";
+$content = "<b>
+			  Good Day $Res_name, <br></br>
+			  <br></br>
+			  Please Show your reservation code when borrowing reserved equipment. <br></br>
+				  <br></br>
+				  <br></br>
+				  <h2> Your Reservation code: $Res_Code </h2> <br></br>
+					   Reservation date: $Res_date <br></br>
+					   Reservation start:$T_start <br></br>
+					   Reservation End:  $T_end  <br></br>
+				  <br></br>
+				  Thank you <br></br>
+
+
+			</b>";
+
+
+			header('Refresh: 30; URL= ../index.php');
 
 
 
@@ -17,8 +69,18 @@ if(isset($_GET['name'])){
 					  	Reservation Posted Please wait for the confirmation through email Please take note of your reservation ID
 					  </div>
 					</div>
-			<?PHP	
-  }
+	<?PHP
+	
+	$mail->MsgHTML($content); 
+		if(!$mail->Send()) {
+			echo "Error while sending Email.";
+			//var_dump($mail);
+		} else {
+			echo "Email sent successfully";
+		}
+	
+
+}
 
 
 ?>

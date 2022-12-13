@@ -9,3 +9,16 @@ $tbl_name="reservation"; //table name
 $clientID = '';
 $clientSecret = '';
 $redirectUri = 'https://localhost/OJT/redirect.php';
+
+
+//email
+
+$SMTPDebug  = 0;  
+$SMTPAuth   = TRUE;
+$SMTPSecure = "tls";
+$Port       = 587;
+$Host       = "smtp.gmail.com";
+$Username   = base64_decode('ZmFiaWFuMTEwMzcyNEBjZXUuZWR1LnBo');
+$Password   = base64_decode('RHVkZWtvMDEwOA==');
+
+?>
