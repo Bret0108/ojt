@@ -17,8 +17,8 @@ require '../PHPMailer-master/src/SMTP.php';
   $mail->SMTPSecure = $SMTPSecure;
   $mail->Port       = $Port;
   $mail->Host       = $Host;
-  $mail->Username   = $Username;
-  $mail->Password   = $Password;
+  $mail->Username   = $Up;
+  $mail->Password   = $Down;
 
 
 
@@ -30,7 +30,7 @@ require '../PHPMailer-master/src/SMTP.php';
 
 
 $mail->AddAddress($row['Email'], $row['ReqName']);
-$mail->SetFrom("fabian1103724@ceu.edu.ph", "TLTD Reservation Automated message do not reply");
+$mail->SetFrom($Up, "TLTD Reservation Automated message do not reply");
 $mail->AddReplyTo($row['Email'], $row['ReqName']);
 $mail->AddCC("fabian1103724@ceu.edu.ph", "TLTD Reservation Automated message do not reply");
 $mail->Subject = "TLTD Reservation Confirmation Email";
