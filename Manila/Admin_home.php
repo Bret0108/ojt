@@ -135,6 +135,7 @@
 
 
   <section class="Pending" id="pending">
+  <h3 class="contact" id="contact">Search for Pending Reservation</h3>
     <div class="containeredP">
     <h3 class="label_Confirm">Search Reservation</h3> 
         <form action="" method="GET">
