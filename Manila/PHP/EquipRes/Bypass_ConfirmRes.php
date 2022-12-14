@@ -50,7 +50,7 @@ include('../Connection/Connection.php');
  
  			 </b>";
 
-              header('Refresh: 30; URL= Admin_home.php');
+              header('Refresh: 60; URL= Admin_home.php');
 
 if(isset($_GET['name'])){
 	$Res_id = $_GET['name'];
