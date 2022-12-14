@@ -51,7 +51,7 @@ $content = "<b>
 			</b>";
 
 
-			header('Refresh: 30; URL= ../index.php');
+			header('Refresh: 60; URL= ../index.php');
 
 
 
